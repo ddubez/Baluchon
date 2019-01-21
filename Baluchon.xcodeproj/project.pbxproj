@@ -12,6 +12,9 @@
 		4F5C9C3C21ED417E00F6D913 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F5C9C3B21ED417E00F6D913 /* Assets.xcassets */; };
 		4F5C9C3F21ED417E00F6D913 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F5C9C3D21ED417E00F6D913 /* LaunchScreen.storyboard */; };
 		4F5C9C5521ED417E00F6D913 /* BaluchonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5C9C5421ED417E00F6D913 /* BaluchonUITests.swift */; };
+		4FD311F021F52EAD00E6C36C /* ExchangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD311EF21F52EAD00E6C36C /* ExchangeViewController.swift */; };
+		4FD311F221F533DC00E6C36C /* TranslateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD311F121F533DC00E6C36C /* TranslateViewController.swift */; };
+		4FD311F421F533F600E6C36C /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD311F321F533F600E6C36C /* WeatherViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +45,9 @@
 		4F5C9C5021ED417E00F6D913 /* BaluchonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BaluchonUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F5C9C5421ED417E00F6D913 /* BaluchonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaluchonUITests.swift; sourceTree = "<group>"; };
 		4F5C9C5621ED417E00F6D913 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4FD311EF21F52EAD00E6C36C /* ExchangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeViewController.swift; sourceTree = "<group>"; };
+		4FD311F121F533DC00E6C36C /* TranslateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateViewController.swift; sourceTree = "<group>"; };
+		4FD311F321F533F600E6C36C /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +117,9 @@
 		4F7253D921F28BD200F15525 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				4FD311F121F533DC00E6C36C /* TranslateViewController.swift */,
+				4FD311F321F533F600E6C36C /* WeatherViewController.swift */,
+				4FD311EF21F52EAD00E6C36C /* ExchangeViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -294,6 +303,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F5C9C3521ED417D00F6D913 /* AppDelegate.swift in Sources */,
+				4FD311F421F533F600E6C36C /* WeatherViewController.swift in Sources */,
+				4FD311F021F52EAD00E6C36C /* ExchangeViewController.swift in Sources */,
+				4FD311F221F533DC00E6C36C /* TranslateViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,7 +481,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A5M6QHPHN6;
-				INFOPLIST_FILE = Baluchon/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Baluchon/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -487,7 +499,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A5M6QHPHN6;
-				INFOPLIST_FILE = Baluchon/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Baluchon/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

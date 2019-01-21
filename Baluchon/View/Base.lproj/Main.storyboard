@@ -10,37 +10,33 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
-        <scene sceneID="Dvr-LU-R8Y">
+        <!--Bling Bling-->
+        <scene sceneID="BZ4-S5-5gI">
             <objects>
-                <viewController id="ueG-ed-DZH" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Tbt-Cx-th4">
+                <viewController id="eMg-Jp-0OH" customClass="ExchangeViewController" customModule="Baluchon" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LNv-ha-xR3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="argent" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dju-4y-43l">
+                                <rect key="frame" x="162.5" y="323" width="50" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="Rj4-sx-q7G"/>
+                        <constraints>
+                            <constraint firstItem="dju-4y-43l" firstAttribute="centerY" secondItem="LNv-ha-xR3" secondAttribute="centerY" id="CQC-KX-tA9"/>
+                            <constraint firstItem="dju-4y-43l" firstAttribute="centerX" secondItem="LNv-ha-xR3" secondAttribute="centerX" id="f6a-Uh-NBb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wjQ-kO-fLP"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="MAc-Rn-4Jz"/>
+                    <tabBarItem key="tabBarItem" title="Bling Bling" image="MoneyLogo" id="p1D-RC-YbX"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jz4-Ka-6hR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qcd-xm-1yX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="399" y="563"/>
-        </scene>
-        <!--Item 1-->
-        <scene sceneID="OXc-Gb-foj">
-            <objects>
-                <viewController id="5SL-gc-KuE" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="eQE-J6-xdK">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="J39-x6-Tdm"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="eNi-dm-70y"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="UXx-Fe-X03" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="397" y="-103"/>
+            <point key="canvasLocation" x="340" y="246"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="l4n-P4-B5m">
@@ -50,15 +46,79 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.84061896800000002" green="0.64017909770000003" blue="0.2430107594" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="selectedImageTintColor" red="0.2393015027" green="0.13413912059999999" blue="0.25099110600000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBar>
                     <connections>
-                        <segue destination="5SL-gc-KuE" kind="relationship" relationship="viewControllers" id="hxy-Zg-4gL"/>
-                        <segue destination="ueG-ed-DZH" kind="relationship" relationship="viewControllers" id="gHf-d6-BtB"/>
+                        <segue destination="eMg-Jp-0OH" kind="relationship" relationship="viewControllers" id="vhS-4a-doU"/>
+                        <segue destination="WiE-Ya-kb5" kind="relationship" relationship="viewControllers" id="RiQ-C7-8vU"/>
+                        <segue destination="87s-6A-hUF" kind="relationship" relationship="viewControllers" id="Mh7-jB-J7r"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wso-ZF-YUr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-557" y="231"/>
+            <point key="canvasLocation" x="-521" y="707"/>
+        </scene>
+        <!--Bla Bla-->
+        <scene sceneID="h0L-Xy-Dv5">
+            <objects>
+                <viewController id="WiE-Ya-kb5" customClass="TranslateViewController" customModule="Baluchon" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wBW-nq-v14">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="traduction" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B8B-ae-zE9">
+                                <rect key="frame" x="148" y="323" width="79" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="B8B-ae-zE9" firstAttribute="centerX" secondItem="wBW-nq-v14" secondAttribute="centerX" id="JEJ-8F-Q1G"/>
+                            <constraint firstItem="B8B-ae-zE9" firstAttribute="centerY" secondItem="wBW-nq-v14" secondAttribute="centerY" id="rSG-OD-d1i"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="m1V-Lz-ZpF"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Bla Bla" image="TranslateLogo" id="HS6-OX-W0a"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1t9-QB-gNA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="340" y="953"/>
+        </scene>
+        <!--Gla Gla-->
+        <scene sceneID="hfw-tM-tpK">
+            <objects>
+                <viewController id="87s-6A-hUF" customClass="WeatherViewController" customModule="Baluchon" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ARj-uY-m2X">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="meteo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SVf-Kf-qQM">
+                                <rect key="frame" x="163" y="323" width="49" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="SVf-Kf-qQM" firstAttribute="centerX" secondItem="ARj-uY-m2X" secondAttribute="centerX" id="a0z-Df-ygA"/>
+                            <constraint firstItem="SVf-Kf-qQM" firstAttribute="centerY" secondItem="ARj-uY-m2X" secondAttribute="centerY" id="c7O-JX-aEf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="n03-Iv-rJJ"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Gla Gla" image="WeatherLogo" id="edf-Vl-btK"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MS3-ro-Lgz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="340" y="1664"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="MoneyLogo" width="25" height="25"/>
+        <image name="TranslateLogo" width="25" height="25"/>
+        <image name="WeatherLogo" width="25" height="25"/>
+    </resources>
 </document>
