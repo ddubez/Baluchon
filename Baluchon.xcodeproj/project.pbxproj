@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F06B1B321FB735600AFDBC5 /* Forex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F06B1B221FB735600AFDBC5 /* Forex.swift */; };
+		4F06B1B521FB744B00AFDBC5 /* ForexService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F06B1B421FB744B00AFDBC5 /* ForexService.swift */; };
 		4F5C9C3521ED417D00F6D913 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5C9C3421ED417D00F6D913 /* AppDelegate.swift */; };
 		4F5C9C3A21ED417D00F6D913 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F5C9C3821ED417D00F6D913 /* Main.storyboard */; };
 		4F5C9C3C21ED417E00F6D913 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F5C9C3B21ED417E00F6D913 /* Assets.xcassets */; };
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4F06B1B221FB735600AFDBC5 /* Forex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forex.swift; sourceTree = "<group>"; };
+		4F06B1B421FB744B00AFDBC5 /* ForexService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForexService.swift; sourceTree = "<group>"; };
 		4F5C9C3121ED417C00F6D913 /* Baluchon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Baluchon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F5C9C3421ED417D00F6D913 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F5C9C3921ED417D00F6D913 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -136,6 +140,8 @@
 		4F7253DB21F28BF100F15525 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4F06B1B221FB735600AFDBC5 /* Forex.swift */,
+				4F06B1B421FB744B00AFDBC5 /* ForexService.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -302,8 +308,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F06B1B521FB744B00AFDBC5 /* ForexService.swift in Sources */,
 				4F5C9C3521ED417D00F6D913 /* AppDelegate.swift in Sources */,
 				4FD311F421F533F600E6C36C /* WeatherViewController.swift in Sources */,
+				4F06B1B321FB735600AFDBC5 /* Forex.swift in Sources */,
 				4FD311F021F52EAD00E6C36C /* ExchangeViewController.swift in Sources */,
 				4FD311F221F533DC00E6C36C /* TranslateViewController.swift in Sources */,
 			);
