@@ -18,6 +18,8 @@
 		4F5C9C3A21ED417D00F6D913 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F5C9C3821ED417D00F6D913 /* Main.storyboard */; };
 		4F5C9C3C21ED417E00F6D913 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F5C9C3B21ED417E00F6D913 /* Assets.xcassets */; };
 		4F5C9C3F21ED417E00F6D913 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F5C9C3D21ED417E00F6D913 /* LaunchScreen.storyboard */; };
+		4F95AFB42200C0C100AD5194 /* Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F95AFB32200C0C100AD5194 /* Conversion.swift */; };
+		4F95AFB62200F8B400AD5194 /* ConversionTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F95AFB52200F8B400AD5194 /* ConversionTestCase.swift */; };
 		4FD311F021F52EAD00E6C36C /* ExchangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD311EF21F52EAD00E6C36C /* ExchangeViewController.swift */; };
 		4FD311F221F533DC00E6C36C /* TranslateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD311F121F533DC00E6C36C /* TranslateViewController.swift */; };
 		4FD311F421F533F600E6C36C /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD311F321F533F600E6C36C /* WeatherViewController.swift */; };
@@ -49,6 +51,8 @@
 		4F5C9C3B21ED417E00F6D913 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4F5C9C3E21ED417E00F6D913 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4F5C9C4021ED417E00F6D913 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4F95AFB32200C0C100AD5194 /* Conversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversion.swift; sourceTree = "<group>"; };
+		4F95AFB52200F8B400AD5194 /* ConversionTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionTestCase.swift; sourceTree = "<group>"; };
 		4FD311EF21F52EAD00E6C36C /* ExchangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeViewController.swift; sourceTree = "<group>"; };
 		4FD311F121F533DC00E6C36C /* TranslateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateViewController.swift; sourceTree = "<group>"; };
 		4FD311F321F533F600E6C36C /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				4F06B1C521FDA65A00AFDBC5 /* ForexServiceTestCase.swift */,
+				4F95AFB52200F8B400AD5194 /* ConversionTestCase.swift */,
 				4F06B1CB21FE420500AFDBC5 /* URLSessionFake.swift */,
 				4F06B1C921FDB2EB00AFDBC5 /* FakeResponseData.swift */,
 				4F06B1C721FDA72A00AFDBC5 /* Forex.json */,
@@ -137,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				4F06B1B221FB735600AFDBC5 /* Forex.swift */,
+				4F95AFB32200C0C100AD5194 /* Conversion.swift */,
 				4F06B1B421FB744B00AFDBC5 /* ForexService.swift */,
 			);
 			path = Model;
@@ -277,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F06B1C621FDA65A00AFDBC5 /* ForexServiceTestCase.swift in Sources */,
+				4F95AFB62200F8B400AD5194 /* ConversionTestCase.swift in Sources */,
 				4F06B1CC21FE420500AFDBC5 /* URLSessionFake.swift in Sources */,
 				4F06B1CA21FDB2EB00AFDBC5 /* FakeResponseData.swift in Sources */,
 			);
@@ -290,6 +297,7 @@
 				4F5C9C3521ED417D00F6D913 /* AppDelegate.swift in Sources */,
 				4FD311F421F533F600E6C36C /* WeatherViewController.swift in Sources */,
 				4F06B1B321FB735600AFDBC5 /* Forex.swift in Sources */,
+				4F95AFB42200C0C100AD5194 /* Conversion.swift in Sources */,
 				4FD311F021F52EAD00E6C36C /* ExchangeViewController.swift in Sources */,
 				4FD311F221F533DC00E6C36C /* TranslateViewController.swift in Sources */,
 			);

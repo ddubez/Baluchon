@@ -14,6 +14,13 @@ class ExchangeViewController: UIViewController {
         super.viewDidLoad()
     }
 
+    // MARK: - PROPERTIES
+    var conversion = Conversion()
+    var imputTextField = UITextField()
+    var resultTextFied = UITextField()
+    var imputActivityIndicator = UIActivityIndicatorView()
+    var resultActivityIndicator = UIActivityIndicatorView()
+
     // MARK: - IBOUTLET
     @IBOutlet weak var baseRateTextField: UITextField!
     @IBOutlet weak var rateTextField: UITextField!
@@ -21,7 +28,55 @@ class ExchangeViewController: UIViewController {
     @IBOutlet weak var rateActivityIndicator: UIActivityIndicatorView!
 
      // MARK: - FUNCTION
+    private func toggleTextField(input: UITextField,
+                                 result: UITextField,
+                                 resultActivityIndicateur: UIActivityIndicatorView,
+                                 working: Bool) {
+        if working {
+            input.backgroundColor = UIColor.gray
+        } else {
+            input.backgroundColor = UIColor.white
+        }
+        input.isEnabled = !working
+        result.isHidden = working
+        rateActivityIndicator.isHidden = !working
+    }
 
+    private func updateAmountText() {
+        if conversion.way == .normal {
+            imputTextField = baseRateTextField
+            resultTextFied = rateTextField
+            imputActivityIndicator = baseRateActivityIndicator
+            resultActivityIndicator = rateActivityIndicator
+        } else {
+            imputTextField = rateTextField
+            resultTextFied = baseRateTextField
+            imputActivityIndicator = rateActivityIndicator
+            resultActivityIndicator = baseRateActivityIndicator
+        }
+        toggleTextField(input: imputTextField,
+                        result: resultTextFied,
+                        resultActivityIndicateur: resultActivityIndicator,
+                        working: true)
+
+        ForexService.shared.getForex { (success, forex, error) in
+            self.toggleTextField(input: self.imputTextField,
+                                 result: self.resultTextFied,
+                                 resultActivityIndicateur: self.resultActivityIndicator,
+                                 working: false)
+
+            if success == true, let forex = forex {
+                guard let amountToConvert = Double(self.imputTextField.text!) else {
+                    self.displayAlert(with: "enter a number !")
+                    return
+                }
+                self.conversion.convert(amountToConvert, rate: forex.rates!.USD)
+                self.resultTextFied.text = "\(self.conversion.amountConverted)"
+            } else {
+                self.displayAlert(with: error)
+            }
+        }
+    }
 }
 
 // MARK: - User KeyBoard Data Entry
@@ -29,51 +84,11 @@ extension ExchangeViewController: UITextFieldDelegate {
 
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
         if textField == baseRateTextField {
-            baseRateTextField.backgroundColor = UIColor.gray
-            baseRateTextField.isEnabled = false
-            rateTextField.isHidden = true
-            rateActivityIndicator.isHidden = false
-
-            ForexService.shared.getForex { (success, forex, error) in
-                self.baseRateTextField.backgroundColor = UIColor.white
-                self.baseRateTextField.isEnabled = true
-                self.rateTextField.isHidden = false
-                self.rateActivityIndicator.isHidden = true
-
-                if success == true, let forex = forex {
-                    guard let amountToConvert = Double(self.baseRateTextField.text!) else {
-                        self.displayAlert(with: "enter a number !")
-                        return
-                    }
-                    let amountConverted = amountToConvert * forex.rates!.USD
-                    self.rateTextField.text = "\(amountConverted)"
-                } else {
-                    self.displayAlert(with: error)
-                }
-            }
+            conversion.way = .normal
+            updateAmountText()
         } else if textField == rateTextField {
-            rateTextField.backgroundColor = UIColor.gray
-            rateTextField.isEnabled = false
-            baseRateTextField.isHidden = true
-            baseRateActivityIndicator.isHidden = false
-
-            ForexService.shared.getForex { (success, forex, error) in
-                self.rateTextField.backgroundColor = UIColor.white
-                self.rateTextField.isEnabled = true
-                self.baseRateTextField.isHidden = false
-                self.baseRateActivityIndicator.isHidden = true
-
-                if success == true, let forex = forex {
-                    guard let amountToConvert = Double(self.rateTextField.text!) else {
-                        self.displayAlert(with: "enter a number !")
-                        return
-                    }
-                    let amountConverted = amountToConvert / forex.rates!.USD
-                    self.baseRateTextField.text = "\(amountConverted)"
-                } else {
-                    self.displayAlert(with: error)
-                }
-            }
+            conversion.way = .reserse
+            updateAmountText()
         }
     }
 
@@ -82,6 +97,7 @@ extension ExchangeViewController: UITextFieldDelegate {
         rateTextField.resignFirstResponder()
     }
 }
+
 // MARK: - Alert
 extension ExchangeViewController {
     func displayAlert(with message: String) {
@@ -91,6 +107,4 @@ extension ExchangeViewController {
     }
 }
 
-// TODO: - gerer les différentes messages erreur (modifier les texte dans le modele
-// TODO: - refactoriser
 // TODO: - UI test à faire

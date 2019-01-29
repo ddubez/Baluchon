@@ -125,5 +125,20 @@ class ForexServiceTestCase: XCTestCase {
         }
         wait(for: [expectation], timeout: 0.01)
     }
+
+     func testGetForexServiceShouldPostSuccessCallback() {
+        // Given
+
+        // When
+        let expectation = XCTestExpectation(description: "Wait for queue change.")
+        ForexService.shared.getForex { (success, forex, error) in
+            // Then
+            XCTAssertTrue(success)
+            XCTAssertNotNil(forex)
+            XCTAssertEqual(error, "")
+
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 5.0)
+    }
 }
-// TODO: completer pour 100% de coverage
