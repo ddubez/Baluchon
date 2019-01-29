@@ -9,25 +9,22 @@
 /* Begin PBXBuildFile section */
 		4F06B1B321FB735600AFDBC5 /* Forex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F06B1B221FB735600AFDBC5 /* Forex.swift */; };
 		4F06B1B521FB744B00AFDBC5 /* ForexService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F06B1B421FB744B00AFDBC5 /* ForexService.swift */; };
+		4F06B1C621FDA65A00AFDBC5 /* ForexServiceTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F06B1C521FDA65A00AFDBC5 /* ForexServiceTestCase.swift */; };
+		4F06B1C821FDA72A00AFDBC5 /* Forex.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F06B1C721FDA72A00AFDBC5 /* Forex.json */; };
+		4F06B1CA21FDB2EB00AFDBC5 /* FakeResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F06B1C921FDB2EB00AFDBC5 /* FakeResponseData.swift */; };
+		4F06B1CC21FE420500AFDBC5 /* URLSessionFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F06B1CB21FE420500AFDBC5 /* URLSessionFake.swift */; };
+		4F06B1CE2200634D00AFDBC5 /* WrongForex.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F06B1CD2200634D00AFDBC5 /* WrongForex.json */; };
 		4F5C9C3521ED417D00F6D913 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5C9C3421ED417D00F6D913 /* AppDelegate.swift */; };
 		4F5C9C3A21ED417D00F6D913 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F5C9C3821ED417D00F6D913 /* Main.storyboard */; };
 		4F5C9C3C21ED417E00F6D913 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F5C9C3B21ED417E00F6D913 /* Assets.xcassets */; };
 		4F5C9C3F21ED417E00F6D913 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F5C9C3D21ED417E00F6D913 /* LaunchScreen.storyboard */; };
-		4F5C9C5521ED417E00F6D913 /* BaluchonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5C9C5421ED417E00F6D913 /* BaluchonUITests.swift */; };
 		4FD311F021F52EAD00E6C36C /* ExchangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD311EF21F52EAD00E6C36C /* ExchangeViewController.swift */; };
 		4FD311F221F533DC00E6C36C /* TranslateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD311F121F533DC00E6C36C /* TranslateViewController.swift */; };
 		4FD311F421F533F600E6C36C /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD311F321F533F600E6C36C /* WeatherViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		4F5C9C4621ED417E00F6D913 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4F5C9C2921ED417C00F6D913 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4F5C9C3021ED417C00F6D913;
-			remoteInfo = Baluchon;
-		};
-		4F5C9C5121ED417E00F6D913 /* PBXContainerItemProxy */ = {
+		4F06B1C021FDA3F500AFDBC5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4F5C9C2921ED417C00F6D913 /* Project object */;
 			proxyType = 1;
@@ -39,37 +36,33 @@
 /* Begin PBXFileReference section */
 		4F06B1B221FB735600AFDBC5 /* Forex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forex.swift; sourceTree = "<group>"; };
 		4F06B1B421FB744B00AFDBC5 /* ForexService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForexService.swift; sourceTree = "<group>"; };
+		4F06B1BB21FDA3F500AFDBC5 /* BaluchonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BaluchonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F06B1BF21FDA3F500AFDBC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4F06B1C521FDA65A00AFDBC5 /* ForexServiceTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForexServiceTestCase.swift; sourceTree = "<group>"; };
+		4F06B1C721FDA72A00AFDBC5 /* Forex.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Forex.json; sourceTree = "<group>"; };
+		4F06B1C921FDB2EB00AFDBC5 /* FakeResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeResponseData.swift; sourceTree = "<group>"; };
+		4F06B1CB21FE420500AFDBC5 /* URLSessionFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionFake.swift; sourceTree = "<group>"; };
+		4F06B1CD2200634D00AFDBC5 /* WrongForex.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WrongForex.json; sourceTree = "<group>"; };
 		4F5C9C3121ED417C00F6D913 /* Baluchon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Baluchon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F5C9C3421ED417D00F6D913 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F5C9C3921ED417D00F6D913 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4F5C9C3B21ED417E00F6D913 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4F5C9C3E21ED417E00F6D913 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4F5C9C4021ED417E00F6D913 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4F5C9C4521ED417E00F6D913 /* BaluchonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BaluchonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4F5C9C5021ED417E00F6D913 /* BaluchonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BaluchonUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4F5C9C5421ED417E00F6D913 /* BaluchonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaluchonUITests.swift; sourceTree = "<group>"; };
-		4F5C9C5621ED417E00F6D913 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4FD311EF21F52EAD00E6C36C /* ExchangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeViewController.swift; sourceTree = "<group>"; };
 		4FD311F121F533DC00E6C36C /* TranslateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateViewController.swift; sourceTree = "<group>"; };
 		4FD311F321F533F600E6C36C /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		4F06B1B821FDA3F500AFDBC5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4F5C9C2E21ED417C00F6D913 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4F5C9C4221ED417E00F6D913 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4F5C9C4D21ED417E00F6D913 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -79,11 +72,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4F06B1BC21FDA3F500AFDBC5 /* BaluchonTests */ = {
+			isa = PBXGroup;
+			children = (
+				4F06B1C521FDA65A00AFDBC5 /* ForexServiceTestCase.swift */,
+				4F06B1CB21FE420500AFDBC5 /* URLSessionFake.swift */,
+				4F06B1C921FDB2EB00AFDBC5 /* FakeResponseData.swift */,
+				4F06B1C721FDA72A00AFDBC5 /* Forex.json */,
+				4F06B1CD2200634D00AFDBC5 /* WrongForex.json */,
+				4F06B1BF21FDA3F500AFDBC5 /* Info.plist */,
+			);
+			path = BaluchonTests;
+			sourceTree = "<group>";
+		};
 		4F5C9C2821ED417C00F6D913 = {
 			isa = PBXGroup;
 			children = (
 				4F5C9C3321ED417C00F6D913 /* Baluchon */,
-				4F5C9C5321ED417E00F6D913 /* BaluchonUITests */,
+				4F06B1BC21FDA3F500AFDBC5 /* BaluchonTests */,
 				4F5C9C3221ED417C00F6D913 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -92,8 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				4F5C9C3121ED417C00F6D913 /* Baluchon.app */,
-				4F5C9C4521ED417E00F6D913 /* BaluchonTests.xctest */,
-				4F5C9C5021ED417E00F6D913 /* BaluchonUITests.xctest */,
+				4F06B1BB21FDA3F500AFDBC5 /* BaluchonTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -107,15 +112,6 @@
 				4F7253DC21F28BFC00F15525 /* Supporting Files */,
 			);
 			path = Baluchon;
-			sourceTree = "<group>";
-		};
-		4F5C9C5321ED417E00F6D913 /* BaluchonUITests */ = {
-			isa = PBXGroup;
-			children = (
-				4F5C9C5421ED417E00F6D913 /* BaluchonUITests.swift */,
-				4F5C9C5621ED417E00F6D913 /* Info.plist */,
-			);
-			path = BaluchonUITests;
 			sourceTree = "<group>";
 		};
 		4F7253D921F28BD200F15525 /* Controller */ = {
@@ -159,6 +155,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		4F06B1BA21FDA3F500AFDBC5 /* BaluchonTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4F06B1C221FDA3F500AFDBC5 /* Build configuration list for PBXNativeTarget "BaluchonTests" */;
+			buildPhases = (
+				4F06B1B721FDA3F500AFDBC5 /* Sources */,
+				4F06B1B821FDA3F500AFDBC5 /* Frameworks */,
+				4F06B1B921FDA3F500AFDBC5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4F06B1C121FDA3F500AFDBC5 /* PBXTargetDependency */,
+			);
+			name = BaluchonTests;
+			productName = BaluchonTests;
+			productReference = 4F06B1BB21FDA3F500AFDBC5 /* BaluchonTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		4F5C9C3021ED417C00F6D913 /* Baluchon */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4F5C9C5921ED417E00F6D913 /* Build configuration list for PBXNativeTarget "Baluchon" */;
@@ -177,42 +191,6 @@
 			productReference = 4F5C9C3121ED417C00F6D913 /* Baluchon.app */;
 			productType = "com.apple.product-type.application";
 		};
-		4F5C9C4421ED417E00F6D913 /* BaluchonTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4F5C9C5C21ED417E00F6D913 /* Build configuration list for PBXNativeTarget "BaluchonTests" */;
-			buildPhases = (
-				4F5C9C4121ED417E00F6D913 /* Sources */,
-				4F5C9C4221ED417E00F6D913 /* Frameworks */,
-				4F5C9C4321ED417E00F6D913 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				4F5C9C4721ED417E00F6D913 /* PBXTargetDependency */,
-			);
-			name = BaluchonTests;
-			productName = BaluchonTests;
-			productReference = 4F5C9C4521ED417E00F6D913 /* BaluchonTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		4F5C9C4F21ED417E00F6D913 /* BaluchonUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4F5C9C5F21ED417E00F6D913 /* Build configuration list for PBXNativeTarget "BaluchonUITests" */;
-			buildPhases = (
-				4F5C9C4C21ED417E00F6D913 /* Sources */,
-				4F5C9C4D21ED417E00F6D913 /* Frameworks */,
-				4F5C9C4E21ED417E00F6D913 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				4F5C9C5221ED417E00F6D913 /* PBXTargetDependency */,
-			);
-			name = BaluchonUITests;
-			productName = BaluchonUITests;
-			productReference = 4F5C9C5021ED417E00F6D913 /* BaluchonUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -223,16 +201,12 @@
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "David Dubez";
 				TargetAttributes = {
+					4F06B1BA21FDA3F500AFDBC5 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 4F5C9C3021ED417C00F6D913;
+					};
 					4F5C9C3021ED417C00F6D913 = {
 						CreatedOnToolsVersion = 10.1;
-					};
-					4F5C9C4421ED417E00F6D913 = {
-						CreatedOnToolsVersion = 10.1;
-						TestTargetID = 4F5C9C3021ED417C00F6D913;
-					};
-					4F5C9C4F21ED417E00F6D913 = {
-						CreatedOnToolsVersion = 10.1;
-						TestTargetID = 4F5C9C3021ED417C00F6D913;
 					};
 				};
 			};
@@ -250,13 +224,21 @@
 			projectRoot = "";
 			targets = (
 				4F5C9C3021ED417C00F6D913 /* Baluchon */,
-				4F5C9C4421ED417E00F6D913 /* BaluchonTests */,
-				4F5C9C4F21ED417E00F6D913 /* BaluchonUITests */,
+				4F06B1BA21FDA3F500AFDBC5 /* BaluchonTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		4F06B1B921FDA3F500AFDBC5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F06B1CE2200634D00AFDBC5 /* WrongForex.json in Resources */,
+				4F06B1C821FDA72A00AFDBC5 /* Forex.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4F5C9C2F21ED417C00F6D913 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -264,20 +246,6 @@
 				4F5C9C3F21ED417E00F6D913 /* LaunchScreen.storyboard in Resources */,
 				4F5C9C3C21ED417E00F6D913 /* Assets.xcassets in Resources */,
 				4F5C9C3A21ED417D00F6D913 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4F5C9C4321ED417E00F6D913 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4F5C9C4E21ED417E00F6D913 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +272,16 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		4F06B1B721FDA3F500AFDBC5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F06B1C621FDA65A00AFDBC5 /* ForexServiceTestCase.swift in Sources */,
+				4F06B1CC21FE420500AFDBC5 /* URLSessionFake.swift in Sources */,
+				4F06B1CA21FDB2EB00AFDBC5 /* FakeResponseData.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4F5C9C2D21ED417C00F6D913 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -317,33 +295,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4F5C9C4121ED417E00F6D913 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4F5C9C4C21ED417E00F6D913 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4F5C9C5521ED417E00F6D913 /* BaluchonUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		4F5C9C4721ED417E00F6D913 /* PBXTargetDependency */ = {
+		4F06B1C121FDA3F500AFDBC5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 4F5C9C3021ED417C00F6D913 /* Baluchon */;
-			targetProxy = 4F5C9C4621ED417E00F6D913 /* PBXContainerItemProxy */;
-		};
-		4F5C9C5221ED417E00F6D913 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4F5C9C3021ED417C00F6D913 /* Baluchon */;
-			targetProxy = 4F5C9C5121ED417E00F6D913 /* PBXContainerItemProxy */;
+			targetProxy = 4F06B1C021FDA3F500AFDBC5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -367,6 +325,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		4F06B1C321FDA3F500AFDBC5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = A5M6QHPHN6;
+				INFOPLIST_FILE = BaluchonTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = fr.daviddubez.BaluchonTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Baluchon.app/Baluchon";
+			};
+			name = Debug;
+		};
+		4F06B1C421FDA3F500AFDBC5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = A5M6QHPHN6;
+				INFOPLIST_FILE = BaluchonTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = fr.daviddubez.BaluchonTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Baluchon.app/Baluchon";
+			};
+			name = Release;
+		};
 		4F5C9C5721ED417E00F6D913 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -519,91 +517,18 @@
 			};
 			name = Release;
 		};
-		4F5C9C5D21ED417E00F6D913 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = A5M6QHPHN6;
-				INFOPLIST_FILE = BaluchonTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = fr.daviddubez.BaluchonTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Baluchon.app/Baluchon";
-			};
-			name = Debug;
-		};
-		4F5C9C5E21ED417E00F6D913 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = A5M6QHPHN6;
-				INFOPLIST_FILE = BaluchonTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = fr.daviddubez.BaluchonTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Baluchon.app/Baluchon";
-			};
-			name = Release;
-		};
-		4F5C9C6021ED417E00F6D913 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = A5M6QHPHN6;
-				INFOPLIST_FILE = BaluchonUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = fr.daviddubez.BaluchonUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Baluchon;
-			};
-			name = Debug;
-		};
-		4F5C9C6121ED417E00F6D913 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = A5M6QHPHN6;
-				INFOPLIST_FILE = BaluchonUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = fr.daviddubez.BaluchonUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Baluchon;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4F06B1C221FDA3F500AFDBC5 /* Build configuration list for PBXNativeTarget "BaluchonTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F06B1C321FDA3F500AFDBC5 /* Debug */,
+				4F06B1C421FDA3F500AFDBC5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4F5C9C2C21ED417C00F6D913 /* Build configuration list for PBXProject "Baluchon" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -618,24 +543,6 @@
 			buildConfigurations = (
 				4F5C9C5A21ED417E00F6D913 /* Debug */,
 				4F5C9C5B21ED417E00F6D913 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4F5C9C5C21ED417E00F6D913 /* Build configuration list for PBXNativeTarget "BaluchonTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4F5C9C5D21ED417E00F6D913 /* Debug */,
-				4F5C9C5E21ED417E00F6D913 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4F5C9C5F21ED417E00F6D913 /* Build configuration list for PBXNativeTarget "BaluchonUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4F5C9C6021ED417E00F6D913 /* Debug */,
-				4F5C9C6121ED417E00F6D913 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

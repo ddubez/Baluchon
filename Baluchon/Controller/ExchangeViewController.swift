@@ -53,6 +53,7 @@ extension ExchangeViewController: UITextFieldDelegate {
             }
         } else if textField == rateTextField {
             rateTextField.backgroundColor = UIColor.gray
+            rateTextField.isEnabled = false
             baseRateTextField.isHidden = true
             baseRateActivityIndicator.isHidden = false
 
@@ -92,3 +93,4 @@ extension ExchangeViewController {
 
 // TODO: - gerer les différentes messages erreur (modifier les texte dans le modele
 // TODO: - refactoriser
+// TODO: - UI test à faire

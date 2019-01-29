@@ -27,7 +27,7 @@ struct Error: Decodable {
     var info: String
 }
 
-// TODO: Recuperer les données sur plusieurs jours
+// TODO: Recuperer les données sur plusieurs jours et afficher graph dans view
 
 //"success": true,
 //"timeseries": true,

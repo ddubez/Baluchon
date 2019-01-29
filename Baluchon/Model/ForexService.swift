@@ -9,20 +9,27 @@
 import Foundation
 
 class ForexService {
+
+    private var session = URLSession(configuration: .default)
+
+    init(session: URLSession) {
+        self.session = session
+    }
+
     static var shared = ForexService()
     private init() {}
 
     private static let apiAccesKey = "c119e467e34eb320f48260b2a3efd76b"
-    private static let latestForexUrl =
+/*    private static let latestForexUrl =
         URL(string: "http://data.fixer.io/api/latest?access_key=c119e467e34eb320f48260b2a3efd76b&symbols=USD")!
     let ratedCurrency = "USD"
     let baseCurrency = "EUR"
+*/
 
     private var task: URLSessionDataTask?
 
     func getForex(callBack: @escaping (Bool, Forex?, String) -> Void) {
         let request = createForexRequest()
-        let session = URLSession(configuration: .default)
 
         task?.cancel()
 
