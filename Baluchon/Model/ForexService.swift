@@ -61,8 +61,9 @@ class ForexService {
 
     private func createForexRequest() -> URLRequest {
         var request = URLRequest(url: ForexService.latestForexUrl)
-        request.httpMethod = "POST"
+        request.httpMethod = "GET"
 
         return request
     }
 }
+// TODO: Mettre commentaires

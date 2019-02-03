@@ -26,7 +26,8 @@ struct Error: Decodable {
     var type: String
     var info: String
 }
-
+// TODO: Mettre commentaires
+// TODO: voir si on declrare pas les tructure error a l'interreirude la struc Forex
 // TODO: Recuperer les données sur plusieurs jours et afficher graph dans view
 
 //"success": true,

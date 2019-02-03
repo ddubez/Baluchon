@@ -22,10 +22,10 @@ class ExchangeViewController: UIViewController {
     var resultActivityIndicator = UIActivityIndicatorView()
 
     // MARK: - IBOUTLET
-    @IBOutlet weak var baseRateTextField: UITextField!
-    @IBOutlet weak var rateTextField: UITextField!
-    @IBOutlet weak var baseRateActivityIndicator: UIActivityIndicatorView!
-    @IBOutlet weak var rateActivityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var firstTextField: UITextField!
+    @IBOutlet weak var secondTextField: UITextField!
+    @IBOutlet weak var firstActivityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var secondActivityIndicator: UIActivityIndicatorView!
 
      // MARK: - FUNCTION
     private func toggleTextField(input: UITextField,
@@ -39,20 +39,20 @@ class ExchangeViewController: UIViewController {
         }
         input.isEnabled = !working
         result.isHidden = working
-        rateActivityIndicator.isHidden = !working
+        secondActivityIndicator.isHidden = !working
     }
 
     private func updateAmountText() {
         if conversion.way == .normal {
-            imputTextField = baseRateTextField
-            resultTextFied = rateTextField
-            imputActivityIndicator = baseRateActivityIndicator
-            resultActivityIndicator = rateActivityIndicator
+            imputTextField = firstTextField
+            resultTextFied = secondTextField
+            imputActivityIndicator = firstActivityIndicator
+            resultActivityIndicator = secondActivityIndicator
         } else {
-            imputTextField = rateTextField
-            resultTextFied = baseRateTextField
-            imputActivityIndicator = rateActivityIndicator
-            resultActivityIndicator = baseRateActivityIndicator
+            imputTextField = secondTextField
+            resultTextFied = firstTextField
+            imputActivityIndicator = secondActivityIndicator
+            resultActivityIndicator = firstActivityIndicator
         }
         toggleTextField(input: imputTextField,
                         result: resultTextFied,
@@ -83,18 +83,18 @@ class ExchangeViewController: UIViewController {
 extension ExchangeViewController: UITextFieldDelegate {
 
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
-        if textField == baseRateTextField {
+        if textField == firstTextField {
             conversion.way = .normal
             updateAmountText()
-        } else if textField == rateTextField {
+        } else if textField == secondTextField {
             conversion.way = .reserse
             updateAmountText()
         }
     }
 
     @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
-        baseRateTextField.resignFirstResponder()
-        rateTextField.resignFirstResponder()
+        firstTextField.resignFirstResponder()
+        secondTextField.resignFirstResponder()
     }
 }
 
@@ -106,5 +106,5 @@ extension ExchangeViewController {
         self.present(alert, animated: true, completion: nil)
     }
 }
-
+// TODO: Mettre commentaires
 // TODO: - UI test à faire
