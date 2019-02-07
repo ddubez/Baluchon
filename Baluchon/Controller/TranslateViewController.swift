@@ -143,6 +143,7 @@ extension TranslateViewController {
 }
 // TODO: Mettre commentaires
 // TODO: refactor ??
+// TODO: Changer les message d'alerte en francais)
 // TODO: Voir si il faut mettre le text should return si on a mis la fonction textfielddidendediting ?? /// changer le comportement de la touche entrée
 // TODO: - mouvement du texte vers le haut pour clavier du bas
 // TODO: sur le petit format le texte traduction se cache

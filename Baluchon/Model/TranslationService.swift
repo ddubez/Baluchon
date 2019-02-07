@@ -19,7 +19,6 @@ class TranslationService {
     static var shared = TranslationService()
     private init() {}
 
-    private static let apiAccesKey = "AIzaSyDGlXNXEqaN2thz1tYTfvJ4z921yTklylc"
     private static let urlString = "https://translation.googleapis.com/language/translate/v2"
 
     private static let translationUrl = URL(string: urlString)!
@@ -57,7 +56,7 @@ class TranslationService {
         var request = URLRequest(url: TranslationService.translationUrl)
         request.httpMethod = "POST"
 
-        let body =  "key=" + TranslationService.apiAccesKey +
+        let body =  "key=" + ServicesKey.apiKeyTranslate +
                     "&source=" + source +
                     "&target=" + target +
                     "&q=" + textToTranslate

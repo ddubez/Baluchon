@@ -19,14 +19,11 @@ class WeatherService {
     static var shared = WeatherService()
     private init() {}
 
-    private static let apiKey = "b12208e23b060ac0f058c7572534a142"
-    private static let urlString = "api.openweathermap.org/data/2.5/weather"
-
-    private static let weatherUrl = URL(string: urlString)!
+    private static let urlString = "http://api.openweathermap.org/data/2.5/group"
 
     private var task: URLSessionDataTask?
 
-    func getWeather(firstCityId: String, secondCityId: String, callBack: @escaping (Bool, Weather?, String) -> Void) {
+    func getWeather(firstCityId: String, secondCityId: String, callBack: @escaping (Bool, WeatherData?, String) -> Void) {
         let request = createWeatherRequest(firstCityId: firstCityId, secondCityId: secondCityId)
 
         task?.cancel()
@@ -41,25 +38,25 @@ class WeatherService {
                     callBack(false, nil, "error in statusCode")
                     return
                 }
-                guard let responseJSON = try? JSONDecoder().decode(Weather.self, from: data) else {
+                guard let responseJSON = try? JSONDecoder().decode(WeatherData.self, from: data) else {
                     callBack(false, nil, "error in JSONDecoder")
                     return
                 }
 
-                let weather = responseJSON
-                callBack(true, weather, "")
+                let weatherData = responseJSON
+                callBack(true, weatherData, "")
             }
         }
         task?.resume()
     }
 
     private func createWeatherRequest(firstCityId: String, secondCityId: String) -> URLRequest {
-        var request = URLRequest(url: WeatherService.weatherUrl)
-        request.httpMethod = "POST"
+        let weatherUrlStringWithKey = WeatherService.urlString + "?id=" + firstCityId + "," + secondCityId + "&APPID=" + ServicesKey.apiKeyWeather + "&units=metric" + "&lang=fr"
+        
+        let weatherUrl = URL(string: weatherUrlStringWithKey)!
 
-        let body =  "q=" + firstCityId + "," + secondCityId +
-            "&APPID=" + WeatherService.apiKey
-        request.httpBody = body.data(using: .utf8)
+        var request = URLRequest(url: weatherUrl)
+        request.httpMethod = "POST"
 
         return request
     }

@@ -106,5 +106,6 @@ extension ExchangeViewController {
         self.present(alert, animated: true, completion: nil)
     }
 }
+// TODO: Changer les message d'alerte en francais
 // TODO: Mettre commentaires
 // TODO: - UI test à faire

@@ -19,10 +19,9 @@ class ForexService {
     static var shared = ForexService()
     private init() {}
 
-    private static let apiAccesKey = "c119e467e34eb320f48260b2a3efd76b"
     private static let ratedCurrency = "USD"
     private static let baseCurrency = "EUR"
-    private static let urlString = "http://data.fixer.io/api/latest?access_key=" + apiAccesKey
+    private static let urlString = "http://data.fixer.io/api/latest?access_key=" + ServicesKey.apiKeyForex
                                     + "&symbols=" + ratedCurrency + "&base=" + baseCurrency
 
     private static let latestForexUrl = URL(string: urlString)!
