@@ -39,19 +39,20 @@ struct WeatherData: Decodable {
         var id: Int
         var message: Double
         var country: String
-        var sunrise: Int
-        var sunset: Int
+        var sunrise: Double
+        var sunset: Double
     }
     struct Weather: Decodable {
         var id: Int
         var main: String
         var description: String
         var icon: String
+        var iconImage: Data?
     }
     struct Main: Decodable {
         var temp: Double
-        var pressure: Double?
-        var humidity: Double?
+        var pressure: Double
+        var humidity: Double
         var tempMin: Double
         var tempMax: Double
         var seaLevel: Double?

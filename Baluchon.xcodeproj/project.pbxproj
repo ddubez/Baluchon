@@ -28,6 +28,7 @@
 		4FE836672206E4DE00F01DDA /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE836662206E4DE00F01DDA /* WeatherData.swift */; };
 		4FE836692206E4EF00F01DDA /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE836682206E4EF00F01DDA /* WeatherService.swift */; };
 		4FE8366B220738E300F01DDA /* ServicesKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE8366A220738E300F01DDA /* ServicesKey.swift */; };
+		4FE83671220C570500F01DDA /* WeatherDataDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE83670220C570500F01DDA /* WeatherDataDisplay.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		4FE836662206E4DE00F01DDA /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
 		4FE836682206E4EF00F01DDA /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		4FE8366A220738E300F01DDA /* ServicesKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesKey.swift; sourceTree = "<group>"; };
+		4FE83670220C570500F01DDA /* WeatherDataDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataDisplay.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 		4F7253DA21F28BE700F15525 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4FE83670220C570500F01DDA /* WeatherDataDisplay.swift */,
 				4F5C9C3821ED417D00F6D913 /* Main.storyboard */,
 				4F5C9C3D21ED417E00F6D913 /* LaunchScreen.storyboard */,
 			);
@@ -320,6 +323,7 @@
 				4FA85E4D2204FA4F00B14140 /* TranslationService.swift in Sources */,
 				4F95AFB42200C0C100AD5194 /* Conversion.swift in Sources */,
 				4FD311F021F52EAD00E6C36C /* ExchangeViewController.swift in Sources */,
+				4FE83671220C570500F01DDA /* WeatherDataDisplay.swift in Sources */,
 				4FD311F221F533DC00E6C36C /* TranslateViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

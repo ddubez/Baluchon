@@ -20,8 +20,12 @@ class WeatherViewController: UIViewController {
     // MARK: - OUTLETS
     @IBOutlet weak var didTapRefreshButton: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    @IBOutlet weak var firstCityTemperature: UILabel!
-    @IBOutlet weak var secondCityTemperature: UILabel!
+    @IBOutlet weak var upWeatherDataDisplay: WeatherDataDisplay!
+    
+    @IBOutlet weak var downWeatherDataDisplay: WeatherDataDisplay!
+    
+    
+    
     
     // MARK: - IBACTIONS
     @IBAction func didTapRefresh(_ sender: UIButton) {
@@ -36,19 +40,33 @@ class WeatherViewController: UIViewController {
     }
     private func refreshWeather() {
         toggleRefreshButton(working: true)
-        WeatherService.shared.getWeather(firstCityId: newYorkId, secondCityId: bordeauxId) {(success, weatherData, error) in
+        WeatherService.shared.getWeather(firstCityId: newYorkId, secondCityId: bordeauxId) {(success, weatherDataList, error) in
                 self.toggleRefreshButton(working: false)
-                if success == true, let weatherData = weatherData {
-                    guard let weatherDataList = weatherData.list else {
-                         self.displayAlert(with: "Désolé, il n'y a pas de données")
-                        return
-                    }
-                    self.firstCityTemperature.text = String(weatherDataList[0].main.temp) + " °C"
-                    self.secondCityTemperature.text = String(weatherDataList[1].main.temp) + " °C"
-
+                if success == true, let weatherDataList = weatherDataList {
+                    self.setValuesForDataDisplay(self.upWeatherDataDisplay, with: weatherDataList[0])
+                    self.setValuesForDataDisplay(self.downWeatherDataDisplay, with: weatherDataList[1])
                 } else {
                     self.displayAlert(with: error)
                 }
+        }
+    }
+    private func setValuesForDataDisplay(_ dataDisplay: WeatherDataDisplay, with weatherDataList: WeatherData.List) {
+        dataDisplay.cityName = weatherDataList.name + " (" + weatherDataList.sys.country + ")"
+        dataDisplay.mainTemp = String(weatherDataList.main.temp) + " °C"
+        dataDisplay.mainPressure = String(weatherDataList.main.pressure) + " hpa"
+        dataDisplay.mainHumidity = String(weatherDataList.main.humidity) + " %"
+        dataDisplay.mainTempMin = String(weatherDataList.main.tempMin) + " °C"
+        dataDisplay.mainTempMax = String(weatherDataList.main.tempMax) + " °C"
+        let sunriseDate = Date(timeIntervalSince1970: weatherDataList.sys.sunrise)
+        dataDisplay.sysSunrise = "\(DateFormatter.localizedString(from: sunriseDate, dateStyle: .none, timeStyle: .short))"
+        let sunsetDate = Date(timeIntervalSince1970: weatherDataList.sys.sunset)
+        dataDisplay.sysSunset = "\(DateFormatter.localizedString(from: sunsetDate, dateStyle: .none, timeStyle: .short))"
+        dataDisplay.coordonnate = String(weatherDataList.coord.lon) + " lon, " + String(weatherDataList.coord.lat) + " lat"
+        dataDisplay.weatherImage = UIImage(data: weatherDataList.weather[0].iconImage!)
+        
+        for weather in weatherDataList.weather {
+            dataDisplay.weatherDescription += weather.description
+            dataDisplay.weatherDescription += " "
         }
     }
 }
@@ -61,5 +79,10 @@ extension WeatherViewController {
         self.present(alert, animated: true, completion: nil)
     }
 }
+
+// TODO: faire un format different pour quand le chargement est en cours ou qu'il y a une erreur
+// TODO: mettre une bousolle qui tourne avec le vent
+// TODO: Charger l'affichage à l'ouverture de page
 // TODO: Changer les message d'alerte en francais
+// TODO: Mettre une image par defaut si on a pas d'image et mettre les données météos quand meme
 // TODO: Mettre commentaires
