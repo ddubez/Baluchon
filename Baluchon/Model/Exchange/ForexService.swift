@@ -52,6 +52,7 @@ class ForexService {
                     return
                 }
                 let forex = responseJSON
+
                 callBack(true, forex, "")
             }
         }
@@ -66,3 +67,4 @@ class ForexService {
     }
 }
 // TODO: Mettre commentaires
+// TODO: Mettre les paramettre de monaie dans les parametre de getForex ?

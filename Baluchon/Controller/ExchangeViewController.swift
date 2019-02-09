@@ -12,8 +12,13 @@ class ExchangeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // create historic Bar Chart
+        setDataEntries { (dataEntries) in
+            self.historicBarChart.dataEntries = dataEntries
+        }
     }
-
+    
     // MARK: - PROPERTIES
     var conversion = Conversion()
     var imputTextField = UITextField()
@@ -26,7 +31,8 @@ class ExchangeViewController: UIViewController {
     @IBOutlet weak var secondTextField: UITextField!
     @IBOutlet weak var firstActivityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var secondActivityIndicator: UIActivityIndicatorView!
-
+    @IBOutlet weak var historicBarChart: BasicBarChart!
+    
      // MARK: - FUNCTION
     private func toggleTextField(input: UITextField,
                                  result: UITextField,
@@ -106,6 +112,38 @@ extension ExchangeViewController {
         self.present(alert, animated: true, completion: nil)
     }
 }
+
+// MARK: - BarChart
+extension ExchangeViewController {
+    func setDataEntries(completionHandler:@escaping (([BarEntry]) -> Void)) {
+        let colors = [#colorLiteral(red: 0.08462960273, green: 0.5212771297, blue: 0.5258666277, alpha: 1), #colorLiteral(red: 0.7704077363, green: 0.3681732416, blue: 0.2172614336, alpha: 1), #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1), #colorLiteral(red: 0.8777174354, green: 0.6299223304, blue: 0.1042385176, alpha: 1), #colorLiteral(red: 0.2566062808, green: 0.1277478337, blue: 0.2579344213, alpha: 1), #colorLiteral(red: 0.1392979622, green: 0.7078385353, blue: 0.9096518159, alpha: 1), #colorLiteral(red: 0.7746306062, green: 0.6284463406, blue: 0.450842917, alpha: 1)]
+        var result: [BarEntry] = []
+        
+        HistoricalForexService.shared.getTimeSerie { (success, dataEntries, error) in
+            if success == true, let dataEntries = dataEntries {
+                let maxValue = dataEntries.values.max()!
+                let minValue = dataEntries.values.min()!
+                let sortedDataEntries = dataEntries.sorted { $0.key < $1.key }
+                var barCount = 0
+                
+                for (date, value) in sortedDataEntries {
+                    let formatter = DateFormatter()
+                    formatter.dateFormat = "yyyy-MM-dd"
+                    let trueDate = formatter.date(from: date)
+                    formatter.dateFormat = "dd/MM"
+                    let dateToDisplay = formatter.string(from: trueDate!)
+                    
+                    let height: Float = Float((value - minValue) / (maxValue - minValue))
+                    result.append(BarEntry(color: colors[barCount], height: height, textValue: "\(round(value * 1000) / 1000)", title: dateToDisplay))
+                    barCount += 1
+                }
+                completionHandler(result)
+            } else {
+                self.displayAlert(with: error)
+            }
+        }
+    }
+}
 // TODO: Changer les message d'alerte en francais
 // TODO: Mettre commentaires
-// TODO: - UI test à faire
+

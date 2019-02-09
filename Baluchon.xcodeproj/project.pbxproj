@@ -14,6 +14,9 @@
 		4F06B1CA21FDB2EB00AFDBC5 /* FakeResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F06B1C921FDB2EB00AFDBC5 /* FakeResponseData.swift */; };
 		4F06B1CC21FE420500AFDBC5 /* URLSessionFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F06B1CB21FE420500AFDBC5 /* URLSessionFake.swift */; };
 		4F06B1CE2200634D00AFDBC5 /* WrongForex.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F06B1CD2200634D00AFDBC5 /* WrongForex.json */; };
+		4F115E4B220DB5C5005DA761 /* BasicBarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F115E4A220DB5C5005DA761 /* BasicBarChart.swift */; };
+		4F115E4D220DB5DA005DA761 /* BarEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F115E4C220DB5DA005DA761 /* BarEntry.swift */; };
+		4F115E54220DF2CB005DA761 /* HistoricalForexService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F115E53220DF2CB005DA761 /* HistoricalForexService.swift */; };
 		4F5C9C3521ED417D00F6D913 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5C9C3421ED417D00F6D913 /* AppDelegate.swift */; };
 		4F5C9C3A21ED417D00F6D913 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F5C9C3821ED417D00F6D913 /* Main.storyboard */; };
 		4F5C9C3C21ED417E00F6D913 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F5C9C3B21ED417E00F6D913 /* Assets.xcassets */; };
@@ -51,6 +54,9 @@
 		4F06B1C921FDB2EB00AFDBC5 /* FakeResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeResponseData.swift; sourceTree = "<group>"; };
 		4F06B1CB21FE420500AFDBC5 /* URLSessionFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionFake.swift; sourceTree = "<group>"; };
 		4F06B1CD2200634D00AFDBC5 /* WrongForex.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WrongForex.json; sourceTree = "<group>"; };
+		4F115E4A220DB5C5005DA761 /* BasicBarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicBarChart.swift; sourceTree = "<group>"; };
+		4F115E4C220DB5DA005DA761 /* BarEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarEntry.swift; sourceTree = "<group>"; };
+		4F115E53220DF2CB005DA761 /* HistoricalForexService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalForexService.swift; sourceTree = "<group>"; };
 		4F5C9C3121ED417C00F6D913 /* Baluchon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Baluchon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F5C9C3421ED417D00F6D913 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F5C9C3921ED417D00F6D913 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -102,6 +108,52 @@
 			path = BaluchonTests;
 			sourceTree = "<group>";
 		};
+		4F115E48220DB582005DA761 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				4FE83670220C570500F01DDA /* WeatherDataDisplay.swift */,
+			);
+			path = Weather;
+			sourceTree = "<group>";
+		};
+		4F115E49220DB592005DA761 /* BarChart */ = {
+			isa = PBXGroup;
+			children = (
+				4F115E4A220DB5C5005DA761 /* BasicBarChart.swift */,
+				4F115E4C220DB5DA005DA761 /* BarEntry.swift */,
+			);
+			path = BarChart;
+			sourceTree = "<group>";
+		};
+		4F115E50220DE601005DA761 /* Exchange */ = {
+			isa = PBXGroup;
+			children = (
+				4F06B1B421FB744B00AFDBC5 /* ForexService.swift */,
+				4F115E53220DF2CB005DA761 /* HistoricalForexService.swift */,
+				4F95AFB32200C0C100AD5194 /* Conversion.swift */,
+				4F06B1B221FB735600AFDBC5 /* Forex.swift */,
+			);
+			path = Exchange;
+			sourceTree = "<group>";
+		};
+		4F115E51220DE629005DA761 /* Translate */ = {
+			isa = PBXGroup;
+			children = (
+				4FA85E4A22038DF100B14140 /* Translation.swift */,
+				4FA85E4C2204FA4F00B14140 /* TranslationService.swift */,
+			);
+			path = Translate;
+			sourceTree = "<group>";
+		};
+		4F115E52220DE643005DA761 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				4FE836662206E4DE00F01DDA /* WeatherData.swift */,
+				4FE836682206E4EF00F01DDA /* WeatherService.swift */,
+			);
+			path = Weather;
+			sourceTree = "<group>";
+		};
 		4F5C9C2821ED417C00F6D913 = {
 			isa = PBXGroup;
 			children = (
@@ -144,7 +196,8 @@
 		4F7253DA21F28BE700F15525 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				4FE83670220C570500F01DDA /* WeatherDataDisplay.swift */,
+				4F115E49220DB592005DA761 /* BarChart */,
+				4F115E48220DB582005DA761 /* Weather */,
 				4F5C9C3821ED417D00F6D913 /* Main.storyboard */,
 				4F5C9C3D21ED417E00F6D913 /* LaunchScreen.storyboard */,
 			);
@@ -154,13 +207,9 @@
 		4F7253DB21F28BF100F15525 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				4F06B1B221FB735600AFDBC5 /* Forex.swift */,
-				4FA85E4A22038DF100B14140 /* Translation.swift */,
-				4FE836662206E4DE00F01DDA /* WeatherData.swift */,
-				4FE836682206E4EF00F01DDA /* WeatherService.swift */,
-				4FA85E4C2204FA4F00B14140 /* TranslationService.swift */,
-				4F95AFB32200C0C100AD5194 /* Conversion.swift */,
-				4F06B1B421FB744B00AFDBC5 /* ForexService.swift */,
+				4F115E52220DE643005DA761 /* Weather */,
+				4F115E51220DE629005DA761 /* Translate */,
+				4F115E50220DE601005DA761 /* Exchange */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -312,6 +361,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F115E4D220DB5DA005DA761 /* BarEntry.swift in Sources */,
 				4F06B1B521FB744B00AFDBC5 /* ForexService.swift in Sources */,
 				4FE8366B220738E300F01DDA /* ServicesKey.swift in Sources */,
 				4F5C9C3521ED417D00F6D913 /* AppDelegate.swift in Sources */,
@@ -320,11 +370,13 @@
 				4FA85E4B22038DF100B14140 /* Translation.swift in Sources */,
 				4FE836672206E4DE00F01DDA /* WeatherData.swift in Sources */,
 				4F06B1B321FB735600AFDBC5 /* Forex.swift in Sources */,
+				4F115E54220DF2CB005DA761 /* HistoricalForexService.swift in Sources */,
 				4FA85E4D2204FA4F00B14140 /* TranslationService.swift in Sources */,
 				4F95AFB42200C0C100AD5194 /* Conversion.swift in Sources */,
 				4FD311F021F52EAD00E6C36C /* ExchangeViewController.swift in Sources */,
 				4FE83671220C570500F01DDA /* WeatherDataDisplay.swift in Sources */,
 				4FD311F221F533DC00E6C36C /* TranslateViewController.swift in Sources */,
+				4F115E4B220DB5C5005DA761 /* BasicBarChart.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
