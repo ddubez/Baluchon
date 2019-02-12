@@ -9,6 +9,7 @@
 import Foundation
 
 struct Translation: Decodable {
+    // creation of structure like JSON model response
     var data: Data?
     var error: Error?
 
@@ -23,14 +24,13 @@ struct Translation: Decodable {
     struct Error: Decodable {
         var code: Int
         var message: String
-        var errors: Errors
+        var errors: [Errors]
         var status: String
     }
 
     struct Errors: Decodable {
         var message: String
-        var domaine: String
+        var domain: String
         var reason: String
     }
 }
-// TODO: Mettre commentaires

@@ -12,6 +12,9 @@ class WeatherViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        upWeatherDataDisplay.style = .noData
+        downWeatherDataDisplay.style = .noData
+        refreshWeather()
     }
 
     let newYorkId = "5128581"
@@ -44,8 +47,12 @@ class WeatherViewController: UIViewController {
                 self.toggleRefreshButton(working: false)
                 if success == true, let weatherDataList = weatherDataList {
                     self.setValuesForDataDisplay(self.upWeatherDataDisplay, with: weatherDataList[0])
+                    self.upWeatherDataDisplay.style = .dataLoaded
                     self.setValuesForDataDisplay(self.downWeatherDataDisplay, with: weatherDataList[1])
+                    self.downWeatherDataDisplay.style = .dataLoaded
                 } else {
+                    self.upWeatherDataDisplay.style = .noData
+                    self.downWeatherDataDisplay.style = .noData
                     self.displayAlert(with: error)
                 }
         }
@@ -64,6 +71,7 @@ class WeatherViewController: UIViewController {
         dataDisplay.coordonnate = String(weatherDataList.coord.lon) + " lon, " + String(weatherDataList.coord.lat) + " lat"
         dataDisplay.weatherImage = UIImage(data: weatherDataList.weather[0].iconImage!)
         
+        dataDisplay.weatherDescription = ""
         for weather in weatherDataList.weather {
             dataDisplay.weatherDescription += weather.description
             dataDisplay.weatherDescription += " "
@@ -84,5 +92,4 @@ extension WeatherViewController {
 // TODO: mettre une bousolle qui tourne avec le vent
 // TODO: Charger l'affichage à l'ouverture de page
 // TODO: Changer les message d'alerte en francais
-// TODO: Mettre une image par defaut si on a pas d'image et mettre les données météos quand meme
 // TODO: Mettre commentaires

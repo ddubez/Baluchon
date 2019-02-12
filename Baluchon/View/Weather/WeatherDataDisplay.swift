@@ -76,4 +76,39 @@ class WeatherDataDisplay: UIStackView {
             coordonnateLabel.text = coordonnate
         }
     }
+    enum Style {
+        case dataLoaded, noData
+    }
+    var style: Style = .noData {
+        didSet {
+            setStyle(style)
+        }
+    }
+    
+    private func setStyle(_ style: Style) {
+        switch style {
+        case .dataLoaded:
+            cityLabel.backgroundColor = #colorLiteral(red: 0.7031596303, green: 0.8029034734, blue: 0.8099379539, alpha: 1)
+            weatherDescriptionLabel.backgroundColor = #colorLiteral(red: 0.7224442959, green: 0.8457520604, blue: 0.9047884941, alpha: 1)
+            cityLabel.textColor = #colorLiteral(red: 0.7704077363, green: 0.3681732416, blue: 0.2172614336, alpha: 1)
+            weatherDescriptionLabel.textColor = #colorLiteral(red: 0.08462960273, green: 0.5212771297, blue: 0.5258666277, alpha: 1)
+            
+        case .noData:
+            cityLabel.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+            cityLabel.textColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
+            weatherDescriptionLabel.textColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
+            weatherDescriptionLabel.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+            cityName = "??"
+            weatherImage = UIImage(named: "weatherLogo")
+            weatherDescription = "Pas de données"
+            mainTemp = "??"
+            mainPressure = "-"
+            mainHumidity = "-"
+            mainTempMin = "-"
+            mainTempMax = "-"
+            sysSunrise = "-"
+            sysSunset = "-"
+            coordonnate = "-"
+        } 
+    }
 }

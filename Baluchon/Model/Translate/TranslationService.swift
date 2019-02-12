@@ -44,7 +44,10 @@ class TranslationService {
                     callBack(false, nil, "error in JSONDecoder")
                     return
                 }
-
+                guard responseJSON.error == nil else {
+                    callBack(false, nil, (responseJSON.error?.message)!)
+                    return
+                }
                 let translation = responseJSON
                 callBack(true, translation, "")
             }

@@ -9,7 +9,8 @@
 import Foundation
 
 struct WeatherData: Decodable {
-    var cod: String?
+    // creation of structure like JSON model response
+    var cod: Int?
     var message: String?
     var cnt: Int?
     var list: [List]?
@@ -95,7 +96,6 @@ struct WeatherData: Decodable {
     }
 }
 
-// TODO: Mettre commentaires
 // TODO: Remettre swift Link ?????
 /* swiftlint
 else

@@ -387,8 +387,9 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ld9-Fp-8YB" userLabel="SVWeatherDataOne" customClass="WeatherDataDisplay" customModule="Baluchon" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="229"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ville 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lop-0z-24G">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ville 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lop-0z-24G">
                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="20"/>
+                                                <color key="backgroundColor" red="0.72224920989999997" green="0.79980033640000003" blue="0.80784606930000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="Cem-JG-cX3"/>
                                                 </constraints>
@@ -574,8 +575,9 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dp2-1U-CxH" userLabel="SVWeatherDataTwo" customClass="WeatherDataDisplay" customModule="Baluchon" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="269" width="335" height="229"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ville 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F9w-LN-gis">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ville 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F9w-LN-gis">
                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="20"/>
+                                                <color key="backgroundColor" red="0.72224920989999997" green="0.79980033640000003" blue="0.80784606930000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="xae-Z7-HoW"/>
                                                 </constraints>
@@ -815,11 +817,11 @@
         <image name="TranslateLogo" width="25" height="25"/>
         <image name="Up" width="30" height="30"/>
         <image name="WeatherLogo" width="25" height="25"/>
-        <image name="clear" width="36" height="40"/>
+        <image name="clear" width="34" height="38"/>
         <image name="color-short" width="122" height="16"/>
         <image name="coordonate" width="49" height="64"/>
-        <image name="downToUp" width="73" height="40"/>
-        <image name="upToDown" width="74" height="41"/>
+        <image name="downToUp" width="71" height="38"/>
+        <image name="upToDown" width="72" height="39"/>
         <image name="weatherIcon" width="38" height="29"/>
     </resources>
 </document>

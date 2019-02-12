@@ -9,6 +9,7 @@
 import Foundation
 
 struct Forex: Decodable {
+    // creation of structure like JSON model response
     var success: Bool
     var timestamp: Int?
     var base: String?
@@ -32,4 +33,3 @@ struct TimeSerieValue: Decodable {
     var date: Date
     var value: Double
 }
-

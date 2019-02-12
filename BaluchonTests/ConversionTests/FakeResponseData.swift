@@ -27,11 +27,11 @@ class FakeResponseData {
 
     // MARK: - Response
     static let responseOK = HTTPURLResponse(
-        url: URL(string: "http://data.fixer.io")!,
+        url: URL(string: "http://goodResponse")!,
         statusCode: 200, httpVersion: nil, headerFields: [:])!
 
     static let responseKO = HTTPURLResponse(
-        url: URL(string: "http://data.fixer.io")!,
+        url: URL(string: "http://badResponse")!,
         statusCode: 500, httpVersion: nil, headerFields: [:])!
 
     // MARK: - Error

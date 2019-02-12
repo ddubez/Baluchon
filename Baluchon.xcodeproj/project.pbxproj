@@ -32,6 +32,16 @@
 		4FE836692206E4EF00F01DDA /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE836682206E4EF00F01DDA /* WeatherService.swift */; };
 		4FE8366B220738E300F01DDA /* ServicesKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE8366A220738E300F01DDA /* ServicesKey.swift */; };
 		4FE83671220C570500F01DDA /* WeatherDataDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE83670220C570500F01DDA /* WeatherDataDisplay.swift */; };
+		4FFBDCC72212B6BB0075BEAE /* WeatherServiceTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFBDCC62212B6BB0075BEAE /* WeatherServiceTestCase.swift */; };
+		4FFBDCCB2212B6FE0075BEAE /* TranslationServiceTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFBDCCA2212B6FE0075BEAE /* TranslationServiceTestCase.swift */; };
+		4FFBDCCD2212B7850075BEAE /* HistoricalForexServiceTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFBDCCC2212B7850075BEAE /* HistoricalForexServiceTestCase.swift */; };
+		4FFBDCCF2212B8170075BEAE /* HistoricalForex.json in Resources */ = {isa = PBXBuildFile; fileRef = 4FFBDCCE2212B8170075BEAE /* HistoricalForex.json */; };
+		4FFBDCD12212B8800075BEAE /* Translation.json in Resources */ = {isa = PBXBuildFile; fileRef = 4FFBDCD02212B8800075BEAE /* Translation.json */; };
+		4FFBDCD32212B8C70075BEAE /* WeatherData.json in Resources */ = {isa = PBXBuildFile; fileRef = 4FFBDCD22212B8C70075BEAE /* WeatherData.json */; };
+		4FFBDCD52212BA260075BEAE /* FakeTranslationResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFBDCD42212BA260075BEAE /* FakeTranslationResponseData.swift */; };
+		4FFBDCD72212BB920075BEAE /* FakeWeatherResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFBDCD62212BB920075BEAE /* FakeWeatherResponseData.swift */; };
+		4FFBDCD92212BCF90075BEAE /* WrongTranslation.json in Resources */ = {isa = PBXBuildFile; fileRef = 4FFBDCD82212BCF90075BEAE /* WrongTranslation.json */; };
+		4FFBDCDB2212BD2A0075BEAE /* WrongWeatherData.json in Resources */ = {isa = PBXBuildFile; fileRef = 4FFBDCDA2212BD2A0075BEAE /* WrongWeatherData.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +84,16 @@
 		4FE836682206E4EF00F01DDA /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		4FE8366A220738E300F01DDA /* ServicesKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesKey.swift; sourceTree = "<group>"; };
 		4FE83670220C570500F01DDA /* WeatherDataDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataDisplay.swift; sourceTree = "<group>"; };
+		4FFBDCC62212B6BB0075BEAE /* WeatherServiceTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherServiceTestCase.swift; sourceTree = "<group>"; };
+		4FFBDCCA2212B6FE0075BEAE /* TranslationServiceTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationServiceTestCase.swift; sourceTree = "<group>"; };
+		4FFBDCCC2212B7850075BEAE /* HistoricalForexServiceTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalForexServiceTestCase.swift; sourceTree = "<group>"; };
+		4FFBDCCE2212B8170075BEAE /* HistoricalForex.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = HistoricalForex.json; sourceTree = "<group>"; };
+		4FFBDCD02212B8800075BEAE /* Translation.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Translation.json; sourceTree = "<group>"; };
+		4FFBDCD22212B8C70075BEAE /* WeatherData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WeatherData.json; sourceTree = "<group>"; };
+		4FFBDCD42212BA260075BEAE /* FakeTranslationResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeTranslationResponseData.swift; sourceTree = "<group>"; };
+		4FFBDCD62212BB920075BEAE /* FakeWeatherResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeWeatherResponseData.swift; sourceTree = "<group>"; };
+		4FFBDCD82212BCF90075BEAE /* WrongTranslation.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WrongTranslation.json; sourceTree = "<group>"; };
+		4FFBDCDA2212BD2A0075BEAE /* WrongWeatherData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WrongWeatherData.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +117,10 @@
 		4F06B1BC21FDA3F500AFDBC5 /* BaluchonTests */ = {
 			isa = PBXGroup;
 			children = (
-				4F06B1C521FDA65A00AFDBC5 /* ForexServiceTestCase.swift */,
-				4F95AFB52200F8B400AD5194 /* ConversionTestCase.swift */,
 				4F06B1CB21FE420500AFDBC5 /* URLSessionFake.swift */,
-				4F06B1C921FDB2EB00AFDBC5 /* FakeResponseData.swift */,
-				4F06B1C721FDA72A00AFDBC5 /* Forex.json */,
-				4F06B1CD2200634D00AFDBC5 /* WrongForex.json */,
+				4FFBDCC92212B6D20075BEAE /* TranslationTests */,
+				4FFBDCC82212B6C20075BEAE /* WeatherTests */,
+				4F115E57220F0E1B005DA761 /* ConversionTests */,
 				4F06B1BF21FDA3F500AFDBC5 /* Info.plist */,
 			);
 			path = BaluchonTests;
@@ -152,6 +170,20 @@
 				4FE836682206E4EF00F01DDA /* WeatherService.swift */,
 			);
 			path = Weather;
+			sourceTree = "<group>";
+		};
+		4F115E57220F0E1B005DA761 /* ConversionTests */ = {
+			isa = PBXGroup;
+			children = (
+				4F06B1C521FDA65A00AFDBC5 /* ForexServiceTestCase.swift */,
+				4F95AFB52200F8B400AD5194 /* ConversionTestCase.swift */,
+				4F06B1C921FDB2EB00AFDBC5 /* FakeResponseData.swift */,
+				4F06B1C721FDA72A00AFDBC5 /* Forex.json */,
+				4F06B1CD2200634D00AFDBC5 /* WrongForex.json */,
+				4FFBDCCC2212B7850075BEAE /* HistoricalForexServiceTestCase.swift */,
+				4FFBDCCE2212B8170075BEAE /* HistoricalForex.json */,
+			);
+			path = ConversionTests;
 			sourceTree = "<group>";
 		};
 		4F5C9C2821ED417C00F6D913 = {
@@ -223,6 +255,28 @@
 				4F5C9C4021ED417E00F6D913 /* Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4FFBDCC82212B6C20075BEAE /* WeatherTests */ = {
+			isa = PBXGroup;
+			children = (
+				4FFBDCC62212B6BB0075BEAE /* WeatherServiceTestCase.swift */,
+				4FFBDCD62212BB920075BEAE /* FakeWeatherResponseData.swift */,
+				4FFBDCDA2212BD2A0075BEAE /* WrongWeatherData.json */,
+				4FFBDCD22212B8C70075BEAE /* WeatherData.json */,
+			);
+			path = WeatherTests;
+			sourceTree = "<group>";
+		};
+		4FFBDCC92212B6D20075BEAE /* TranslationTests */ = {
+			isa = PBXGroup;
+			children = (
+				4FFBDCCA2212B6FE0075BEAE /* TranslationServiceTestCase.swift */,
+				4FFBDCD02212B8800075BEAE /* Translation.json */,
+				4FFBDCD82212BCF90075BEAE /* WrongTranslation.json */,
+				4FFBDCD42212BA260075BEAE /* FakeTranslationResponseData.swift */,
+			);
+			path = TranslationTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,8 +361,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FFBDCD32212B8C70075BEAE /* WeatherData.json in Resources */,
+				4FFBDCD92212BCF90075BEAE /* WrongTranslation.json in Resources */,
+				4FFBDCCF2212B8170075BEAE /* HistoricalForex.json in Resources */,
+				4FFBDCDB2212BD2A0075BEAE /* WrongWeatherData.json in Resources */,
 				4F06B1CE2200634D00AFDBC5 /* WrongForex.json in Resources */,
 				4F06B1C821FDA72A00AFDBC5 /* Forex.json in Resources */,
+				4FFBDCD12212B8800075BEAE /* Translation.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,6 +412,11 @@
 				4F06B1C621FDA65A00AFDBC5 /* ForexServiceTestCase.swift in Sources */,
 				4F95AFB62200F8B400AD5194 /* ConversionTestCase.swift in Sources */,
 				4F06B1CC21FE420500AFDBC5 /* URLSessionFake.swift in Sources */,
+				4FFBDCD52212BA260075BEAE /* FakeTranslationResponseData.swift in Sources */,
+				4FFBDCD72212BB920075BEAE /* FakeWeatherResponseData.swift in Sources */,
+				4FFBDCCD2212B7850075BEAE /* HistoricalForexServiceTestCase.swift in Sources */,
+				4FFBDCC72212B6BB0075BEAE /* WeatherServiceTestCase.swift in Sources */,
+				4FFBDCCB2212B6FE0075BEAE /* TranslationServiceTestCase.swift in Sources */,
 				4F06B1CA21FDB2EB00AFDBC5 /* FakeResponseData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

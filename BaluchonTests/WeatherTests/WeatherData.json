@@ -1,0 +1,85 @@
+{
+    "cnt": 2,
+    "list": [
+        {
+            "coord": {
+                "lon": -74.01,
+                "lat": 40.71
+            },
+            "sys": {
+                "type": 1,
+                "id": 4026,
+                "message": 0.0054,
+                "country": "US",
+                "sunrise": 1549972418,
+                "sunset": 1550010445
+            },
+            "weather": [
+                {
+                    "id": 500,
+                    "main": "Rain",
+                    "description": "light rain",
+                    "icon": "10n"
+                }
+            ],
+            "main": {
+                "temp": 273.4,
+                "pressure": 1029,
+                "humidity": 48,
+                "temp_min": 271.45,
+                "temp_max": 274.85
+            },
+            "visibility": 16093,
+            "wind": {
+                "speed": 3.6,
+                "deg": 50
+            },
+            "clouds": {
+                "all": 90
+            },
+            "dt": 1549959512,
+            "id": 5128581,
+            "name": "New York"
+        },
+        {
+            "coord": {
+                "lon": -0.58,
+                "lat": 44.84
+            },
+            "sys": {
+                "type": 1,
+                "id": 6450,
+                "message": 0.0047,
+                "country": "FR",
+                "sunrise": 1549955247,
+                "sunset": 1549992374
+            },
+            "weather": [
+                {
+                    "id": 741,
+                    "main": "Fog",
+                    "description": "fog",
+                    "icon": "50d"
+                }
+            ],
+            "main": {
+                "temp": 273.59,
+                "pressure": 1035,
+                "humidity": 100,
+                "temp_min": 273.15,
+                "temp_max": 274.15
+            },
+            "visibility": 7000,
+            "wind": {
+                "speed": 0.5,
+                "deg": 280
+            },
+            "clouds": {
+                "all": 90
+            },
+            "dt": 1549959512,
+            "id": 3031582,
+            "name": "Bordeaux"
+        }
+    ]
+}

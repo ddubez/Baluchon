@@ -43,7 +43,10 @@ class WeatherService {
                     callBack(false, nil, "error in JSONDecoder")
                     return
                 }
-
+                guard responseJSON.message == nil else {
+                    callBack(false, nil, (responseJSON.message)!)
+                    return
+                }
                 let weatherData = responseJSON
                 
                 guard var weatherDataList = weatherData.list else {
