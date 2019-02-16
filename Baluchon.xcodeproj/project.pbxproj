@@ -23,6 +23,8 @@
 		4F5C9C3F21ED417E00F6D913 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F5C9C3D21ED417E00F6D913 /* LaunchScreen.storyboard */; };
 		4F95AFB42200C0C100AD5194 /* Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F95AFB32200C0C100AD5194 /* Conversion.swift */; };
 		4F95AFB62200F8B400AD5194 /* ConversionTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F95AFB52200F8B400AD5194 /* ConversionTestCase.swift */; };
+		4FA0E0212216C4C300654C68 /* URLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA0E0202216C4C300654C68 /* URLExtension.swift */; };
+		4FA0E02322180C8900654C68 /* UITextView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA0E02222180C8900654C68 /* UITextView+Extensions.swift */; };
 		4FA85E4B22038DF100B14140 /* Translation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA85E4A22038DF100B14140 /* Translation.swift */; };
 		4FA85E4D2204FA4F00B14140 /* TranslationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA85E4C2204FA4F00B14140 /* TranslationService.swift */; };
 		4FD311F021F52EAD00E6C36C /* ExchangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD311EF21F52EAD00E6C36C /* ExchangeViewController.swift */; };
@@ -75,6 +77,8 @@
 		4F5C9C4021ED417E00F6D913 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F95AFB32200C0C100AD5194 /* Conversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversion.swift; sourceTree = "<group>"; };
 		4F95AFB52200F8B400AD5194 /* ConversionTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionTestCase.swift; sourceTree = "<group>"; };
+		4FA0E0202216C4C300654C68 /* URLExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLExtension.swift; sourceTree = "<group>"; };
+		4FA0E02222180C8900654C68 /* UITextView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Extensions.swift"; sourceTree = "<group>"; };
 		4FA85E4A22038DF100B14140 /* Translation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translation.swift; sourceTree = "<group>"; };
 		4FA85E4C2204FA4F00B14140 /* TranslationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationService.swift; sourceTree = "<group>"; };
 		4FD311EF21F52EAD00E6C36C /* ExchangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeViewController.swift; sourceTree = "<group>"; };
@@ -219,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				4FD311F121F533DC00E6C36C /* TranslateViewController.swift */,
+				4FA0E02222180C8900654C68 /* UITextView+Extensions.swift */,
 				4FD311F321F533F600E6C36C /* WeatherViewController.swift */,
 				4FD311EF21F52EAD00E6C36C /* ExchangeViewController.swift */,
 			);
@@ -242,6 +247,7 @@
 				4F115E52220DE643005DA761 /* Weather */,
 				4F115E51220DE629005DA761 /* Translate */,
 				4F115E50220DE601005DA761 /* Exchange */,
+				4FA0E0202216C4C300654C68 /* URLExtension.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -437,8 +443,10 @@
 				4F115E54220DF2CB005DA761 /* HistoricalForexService.swift in Sources */,
 				4FA85E4D2204FA4F00B14140 /* TranslationService.swift in Sources */,
 				4F95AFB42200C0C100AD5194 /* Conversion.swift in Sources */,
+				4FA0E0212216C4C300654C68 /* URLExtension.swift in Sources */,
 				4FD311F021F52EAD00E6C36C /* ExchangeViewController.swift in Sources */,
 				4FE83671220C570500F01DDA /* WeatherDataDisplay.swift in Sources */,
+				4FA0E02322180C8900654C68 /* UITextView+Extensions.swift in Sources */,
 				4FD311F221F533DC00E6C36C /* TranslateViewController.swift in Sources */,
 				4F115E4B220DB5C5005DA761 /* BasicBarChart.swift in Sources */,
 			);

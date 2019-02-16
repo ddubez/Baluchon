@@ -19,17 +19,13 @@ class ForexService {
     static var shared = ForexService()
     private init() {}
 
-    private static let ratedCurrency = "USD"
-    private static let baseCurrency = "EUR"
-    private static let urlString = "http://data.fixer.io/api/latest?access_key=" + ServicesKey.apiKeyForex
-                                    + "&symbols=" + ratedCurrency + "&base=" + baseCurrency
+    private static let baseUrlString = "http://data.fixer.io/api/latest"
+    private static let baseLatestForexUrl = URL(string: baseUrlString)!
 
-    private static let latestForexUrl = URL(string: urlString)!
-
- private var task: URLSessionDataTask?
+    private var task: URLSessionDataTask?
 
     func getForex(callBack: @escaping (Bool, Forex?, String) -> Void) {
-        let request = createForexRequest()
+        let request = createForexRequest(ratedCurrency: "USD", baseCurrency: "EUR")
 
         task?.cancel()
 
@@ -59,12 +55,18 @@ class ForexService {
         task?.resume()
     }
 
-    private func createForexRequest() -> URLRequest {
-        var request = URLRequest(url: ForexService.latestForexUrl)
+    private func createForexRequest(ratedCurrency: String, baseCurrency: String) -> URLRequest {
+        
+        let query: [String: String] = [
+            "access_key": ServicesKey.apiKeyForex,
+            "symbols": ratedCurrency,
+            "base" : baseCurrency
+        ]
+        
+        let latestForexUrl = ForexService.baseLatestForexUrl.withQueries(query)!
+        var request = URLRequest(url: latestForexUrl)
         request.httpMethod = "GET"
 
         return request
     }
 }
-// TODO: Mettre commentaires
-// TODO: Mettre les paramettre de monaie dans les parametre de getForex ?

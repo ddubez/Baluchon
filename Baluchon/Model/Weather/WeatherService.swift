@@ -19,8 +19,11 @@ class WeatherService {
     static var shared = WeatherService()
     private init() {}
 
-    private static let WeatherUrlString = "http://api.openweathermap.org/data/2.5/group"
-    private static let IconImagesUrlString = "http://openweathermap.org/img/w/"
+    private static let WeatherBaseUrlString = "http://api.openweathermap.org/data/2.5/group"
+    private static let WeatherBaseUrl = URL(string: WeatherBaseUrlString)!
+    
+    private static let IconImagesBaseUrlString = "http://openweathermap.org/img/w/"
+    private static let IconImagesBaseUrl = URL(string: IconImagesBaseUrlString)!
     
     private var task: URLSessionDataTask?
 
@@ -76,11 +79,13 @@ class WeatherService {
         task?.resume()
     }
     
-    func getIconImages(icon: String, completionHandler: @escaping ((Data?) -> Void)) {
+    private func getIconImages(icon: String, completionHandler: @escaping ((Data?) -> Void)) {
         let session = URLSession(configuration: .default)
+        var iconImagesUrl = WeatherService.IconImagesBaseUrl
+        iconImagesUrl.appendPathComponent(icon + ".png")
         
         task?.cancel()
-        task = session.dataTask(with: URL(string: WeatherService.IconImagesUrlString + icon + ".png")!) { (data, response, error) in
+        task = session.dataTask(with: iconImagesUrl) { (data, response, error) in
             DispatchQueue.main.async {
                 guard let data = data, error == nil else {
                     completionHandler(nil)
@@ -96,10 +101,15 @@ class WeatherService {
         task?.resume()
     }
     private func createWeatherRequest(firstCityId: String, secondCityId: String) -> URLRequest {
-        let weatherUrlStringWithKey = WeatherService.WeatherUrlString + "?id=" + firstCityId + "," + secondCityId + "&APPID=" + ServicesKey.apiKeyWeather + "&units=metric" + "&lang=fr"
         
-        let weatherUrl = URL(string: weatherUrlStringWithKey)!
-
+        let query: [String: String] = [
+            "id": (firstCityId + "," + secondCityId),
+            "APPID": ServicesKey.apiKeyWeather,
+            "units": "metric",
+            "lang": "fr"
+        ]
+   
+        let weatherUrl = WeatherService.WeatherBaseUrl.withQueries(query)!
         var request = URLRequest(url: weatherUrl)
         request.httpMethod = "POST"
 
