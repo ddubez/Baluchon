@@ -21,13 +21,15 @@ class WeatherService {
 
     private static let WeatherBaseUrlString = "http://api.openweathermap.org/data/2.5/group"
     private static let WeatherBaseUrl = URL(string: WeatherBaseUrlString)!
-    
+
     private static let IconImagesBaseUrlString = "http://openweathermap.org/img/w/"
     private static let IconImagesBaseUrl = URL(string: IconImagesBaseUrlString)!
-    
+
     private var task: URLSessionDataTask?
 
-    func getWeather(firstCityId: String, secondCityId: String, callBack: @escaping (Bool, [WeatherData.List]?, String) -> Void) {
+    func getWeather(firstCityId: String,
+                    secondCityId: String,
+                    callBack: @escaping (Bool, [WeatherData.List]?, String) -> Void) {
         let request = createWeatherRequest(firstCityId: firstCityId, secondCityId: secondCityId)
 
         task?.cancel()
@@ -51,39 +53,39 @@ class WeatherService {
                     return
                 }
                 let weatherData = responseJSON
-                
+
                 guard var weatherDataList = weatherData.list else {
                     callBack(false, nil, "Désolé, il n'y a pas de données météo")
                     return
                 }
-                
+
                 self.getIconImages(icon: weatherDataList[0].weather[0].icon) {(data) in
                     guard let data = data else {
                         callBack(false, nil, "Désolé, il n'y a pas d'image pour la ville 1")
                         return
                     }
                     weatherDataList[0].weather[0].iconImage = data
-                    
+
                     self.getIconImages(icon: weatherDataList[1].weather[0].icon) {(data) in
                         guard let data = data else {
                             callBack(false, nil, "Désolé, il n'y a pas d'image pour la ville 2")
                             return
                         }
                         weatherDataList[1].weather[0].iconImage = data
-                        
+
                         callBack(true, weatherDataList, "")
-                }
+                    }
                 }
             }
         }
         task?.resume()
     }
-    
+
     private func getIconImages(icon: String, completionHandler: @escaping ((Data?) -> Void)) {
-        let session = URLSession(configuration: .default)
+ //       let session = URLSession(configuration: .default)
         var iconImagesUrl = WeatherService.IconImagesBaseUrl
         iconImagesUrl.appendPathComponent(icon + ".png")
-        
+
         task?.cancel()
         task = session.dataTask(with: iconImagesUrl) { (data, response, error) in
             DispatchQueue.main.async {
@@ -101,22 +103,18 @@ class WeatherService {
         task?.resume()
     }
     private func createWeatherRequest(firstCityId: String, secondCityId: String) -> URLRequest {
-        
+
         let query: [String: String] = [
             "id": (firstCityId + "," + secondCityId),
             "APPID": ServicesKey.apiKeyWeather,
             "units": "metric",
             "lang": "fr"
         ]
-   
+
         let weatherUrl = WeatherService.WeatherBaseUrl.withQueries(query)!
         var request = URLRequest(url: weatherUrl)
         request.httpMethod = "POST"
 
         return request
     }
-    
 }
-
-// TODO: Mettre commentaires
-// TODO: Test a faire

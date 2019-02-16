@@ -8,19 +8,19 @@
 
 import Foundation
 class HistoricalForexService {
-    
+
     private var session = URLSession(configuration: .default)
-    
+
     private static let baseUrlString = "http://data.fixer.io/api/"
     private static let baseHistoricalForexUrl = URL(string: baseUrlString)!
-    
+
     private var task: URLSessionDataTask?
-    
+
     func getHistoricalRate(date: String, completionHandler: @escaping ((Forex?) -> Void)) {
         let request = createForexRequest(date: date, ratedCurrency: "USD", baseCurrency: "EUR")
-        
+
         task?.cancel()
-        
+
         task = session.dataTask(with: request) { (data, response, error) in
                 DispatchQueue.main.async {
                     guard let data = data, error == nil else {
@@ -51,15 +51,14 @@ class HistoricalForexService {
         let query: [String: String] = [
             "access_key": ServicesKey.apiKeyForex,
             "symbols": ratedCurrency,
-            "base" : baseCurrency
+            "base": baseCurrency
         ]
-        
-        var HistoricalForexUrl = HistoricalForexService.baseHistoricalForexUrl.withQueries(query)!
-        HistoricalForexUrl.appendPathComponent(date)
-        var request = URLRequest(url: HistoricalForexUrl)
+
+        var historicalForexUrl = HistoricalForexService.baseHistoricalForexUrl.withQueries(query)!
+        historicalForexUrl.appendPathComponent(date)
+        var request = URLRequest(url: historicalForexUrl)
         request.httpMethod = "GET"
-        
+
         return request
     }
 }
-// TODO: Mettre commentaires

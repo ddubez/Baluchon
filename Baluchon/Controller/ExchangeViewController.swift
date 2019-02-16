@@ -12,13 +12,13 @@ class ExchangeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // create historic Bar Chart
         setDataEntries { (dataEntries) in
             self.historicBarChart.dataEntries = dataEntries
         }
     }
-    
+
     // MARK: - PROPERTIES
     var conversion = Conversion()
     var imputTextField = UITextField()
@@ -32,7 +32,7 @@ class ExchangeViewController: UIViewController {
     @IBOutlet weak var firstActivityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var secondActivityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var historicBarChart: BasicBarChart!
-    
+
      // MARK: - FUNCTION
     private func toggleTextField(input: UITextField,
                                  result: UITextField,
@@ -119,34 +119,32 @@ extension ExchangeViewController {
     func setDataEntries(completionHandler:@escaping (([BarEntry]) -> Void)) {
         let dates = setHistoricalDates()
         var result: [BarEntry] = []
-        
+
         var timeSeries = [String: Double]()
         let getHistoricalRatesGroup = DispatchGroup()
-        
+
         for date in dates {
             getHistoricalRatesGroup.enter()
-        
+
             let service = HistoricalForexService()
             service.getHistoricalRate(date: date) { (forex) in
                 guard let forex = forex else {
-                    self.displayAlert(with: "Désolé, il n'y a pas de données historique1")
+                    self.displayAlert(with: "Désolé, il n'y a pas de données historique")
                     return
                 }
                 guard let forexrates = forex.rates else {
-                    self.displayAlert(with: "Désolé, il n'y a pas de données historique2")
+                    self.displayAlert(with: "Désolé, il n'y a pas de données historique")
                     return }
                 timeSeries[date] = forexrates.USD
-                
+
                 getHistoricalRatesGroup.leave()
-                
             }
         }
-        
+
         getHistoricalRatesGroup.notify(queue: .main) {
             result = self.appendBarEntry(timeSeries: timeSeries)
             completionHandler(result)
         }
-    
     }
     private func setHistoricalDates() -> [String] {
         var historicalDates = [String]()
@@ -154,7 +152,7 @@ extension ExchangeViewController {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         historicalDates.append(formatter.string(from: date))
-        
+
         for _ in 1...14 {
             date = date.addingTimeInterval(-86400)
             historicalDates.insert(formatter.string(from: date), at: 0)
@@ -168,21 +166,21 @@ extension ExchangeViewController {
         let minValue = timeSeries.values.min()!
         let sortedDataEntries = timeSeries.sorted { $0.key < $1.key }
         var barCount = 0
-        
+
         for (date, value) in sortedDataEntries {
             let formatter = DateFormatter()
             formatter.dateFormat = "yyyy-MM-dd"
             let trueDate = formatter.date(from: date)
             formatter.dateFormat = "dd/MM"
             let dateToDisplay = formatter.string(from: trueDate!)
-            
+
             let height: Float = Float((value - minValue) / (maxValue - minValue))
-            result.append(BarEntry(color: colors[barCount % 7], height: height, textValue: "\(round(value * 1000) / 1000)", title: dateToDisplay))
+            result.append(BarEntry(color: colors[barCount % 7],
+                                   height: height,
+                                   textValue: "\(round(value * 1000) / 1000)",
+                title: dateToDisplay))
             barCount += 1
         }
         return result
     }
 }
-// TODO: Changer les message d'alerte en francais
-// TODO: Mettre commentaires
-

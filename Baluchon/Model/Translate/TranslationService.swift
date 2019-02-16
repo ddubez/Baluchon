@@ -25,7 +25,10 @@ class TranslationService {
 
     private var task: URLSessionDataTask?
 
-    func getTranslation(textToTranslate: String, source: String, target: String, callBack: @escaping (Bool, Translation?, String) -> Void) {
+    func getTranslation(textToTranslate: String,
+                        source: String,
+                        target: String,
+                        callBack: @escaping (Bool, Translation?, String) -> Void) {
         let request = createTranslationRequest(textToTranslate: textToTranslate, source: source, target: target)
 
         task?.cancel()
@@ -68,7 +71,3 @@ class TranslationService {
         return request
     }
 }
-
-// TODO: Mettre commentaires
-// TODO: Test a faire
-

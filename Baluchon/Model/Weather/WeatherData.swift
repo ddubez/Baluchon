@@ -26,8 +26,8 @@ struct WeatherData: Decodable {
         var clouds: Clouds?
         var rain: Rain?
         var snow: Snow?
-        var dt: Int
-        var id: Int
+        var dataCalculationTime: Int
+        var cityId: Int
         var name: String
         var cod: Int?
     }
@@ -37,14 +37,14 @@ struct WeatherData: Decodable {
     }
     struct Sys: Decodable {
         var type: Int
-        var id: Int
+        var sysId: Int
         var message: Double
         var country: String
         var sunrise: Double
         var sunset: Double
     }
     struct Weather: Decodable {
-        var id: Int
+        var weatherId: Int
         var main: String
         var description: String
         var icon: String
@@ -58,16 +58,6 @@ struct WeatherData: Decodable {
         var tempMax: Double
         var seaLevel: Double?
         var grndLevel: Double?
-
-        enum CodingKeys : String, CodingKey {
-            case temp
-            case pressure
-            case humidity
-            case tempMin = "temp_min"
-            case tempMax = "temp_max"
-            case seaLevel = "sea_level"
-            case grndLevel = "grnd_level"
-        }
     }
     struct Wind: Decodable {
         var speed: Double
@@ -76,30 +66,54 @@ struct WeatherData: Decodable {
     struct Clouds: Decodable {
         var all: Double
     }
-    struct Rain: Decodable{
+    struct Rain: Decodable {
         var oneH: Double
         var treeH: Double
-    
-        enum CodingKeys : String, CodingKey {
-            case oneH = "1h"
-            case treeH = "3h"
-        }
     }
-    struct Snow: Decodable{
+    struct Snow: Decodable {
         var oneH: Double
         var treeH: Double
-        
-        enum CodingKeys : String, CodingKey {
-            case oneH = "1h"
-            case treeH = "3h"
-        }
     }
 }
 
-// TODO: Remettre swift Link ?????
-/* swiftlint
-else
-echo "warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint"
-fi
- */
-
+// MARK: - CodingKey
+extension WeatherData.List {
+    enum CodingKeys: String, CodingKey {
+        case coord, sys, weather, base, main, visibility, wind, clouds, rain, snow, name, cod
+        case dataCalculationTime = "dt"
+        case cityId = "id"
+    }
+}
+extension WeatherData.Sys {
+    enum CodingKeys: String, CodingKey {
+        case type, message, country, sunrise, sunset
+        case sysId = "id"
+    }
+}
+extension WeatherData.Weather {
+    enum CodingKeys: String, CodingKey {
+        case main, description, icon, iconImage
+        case weatherId = "id"
+    }
+}
+extension WeatherData.Main {
+    enum CodingKeys: String, CodingKey {
+        case temp, pressure, humidity
+        case tempMin = "temp_min"
+        case tempMax = "temp_max"
+        case seaLevel = "sea_level"
+        case grndLevel = "grnd_level"
+    }
+}
+extension WeatherData.Rain {
+    enum CodingKeys: String, CodingKey {
+        case oneH = "1h"
+        case treeH = "3h"
+    }
+}
+extension WeatherData.Snow {
+    enum CodingKeys: String, CodingKey {
+        case oneH = "1h"
+        case treeH = "3h"
+    }
+}

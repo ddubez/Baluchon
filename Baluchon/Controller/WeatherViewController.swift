@@ -19,31 +19,29 @@ class WeatherViewController: UIViewController {
 
     let newYorkId = "5128581"
     let bordeauxId = "3031582"
-    
+
     // MARK: - OUTLETS
     @IBOutlet weak var didTapRefreshButton: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var upWeatherDataDisplay: WeatherDataDisplay!
-    
+
     @IBOutlet weak var downWeatherDataDisplay: WeatherDataDisplay!
-    
-    
-    
-    
+
     // MARK: - IBACTIONS
     @IBAction func didTapRefresh(_ sender: UIButton) {
         refreshWeather()
     }
-    
+
     // MARK: - FUNCTIONS
-    
+
     private func toggleRefreshButton(working: Bool) {
         didTapRefreshButton.isHidden = working
         activityIndicator.isHidden = !working
     }
     private func refreshWeather() {
         toggleRefreshButton(working: true)
-        WeatherService.shared.getWeather(firstCityId: newYorkId, secondCityId: bordeauxId) {(success, weatherDataList, error) in
+        WeatherService.shared.getWeather(firstCityId: newYorkId,
+                                         secondCityId: bordeauxId) {(success, weatherDataList, error) in
                 self.toggleRefreshButton(working: false)
                 if success == true, let weatherDataList = weatherDataList {
                     self.setValuesForDataDisplay(self.upWeatherDataDisplay, with: weatherDataList[0])
@@ -65,12 +63,17 @@ class WeatherViewController: UIViewController {
         dataDisplay.mainTempMin = String(weatherDataList.main.tempMin) + " °C"
         dataDisplay.mainTempMax = String(weatherDataList.main.tempMax) + " °C"
         let sunriseDate = Date(timeIntervalSince1970: weatherDataList.sys.sunrise)
-        dataDisplay.sysSunrise = "\(DateFormatter.localizedString(from: sunriseDate, dateStyle: .none, timeStyle: .short))"
+        dataDisplay.sysSunrise =
+            "\(DateFormatter.localizedString(from: sunriseDate, dateStyle: .none, timeStyle: .short))"
         let sunsetDate = Date(timeIntervalSince1970: weatherDataList.sys.sunset)
-        dataDisplay.sysSunset = "\(DateFormatter.localizedString(from: sunsetDate, dateStyle: .none, timeStyle: .short))"
-        dataDisplay.coordonnate = String(weatherDataList.coord.lon) + " lon, " + String(weatherDataList.coord.lat) + " lat"
+        dataDisplay.sysSunset =
+            "\(DateFormatter.localizedString(from: sunsetDate, dateStyle: .none, timeStyle: .short))"
+        dataDisplay.coordonnate = String(weatherDataList.coord.lon)
+            + " lon, "
+            + String(weatherDataList.coord.lat)
+            + " lat"
         dataDisplay.weatherImage = UIImage(data: weatherDataList.weather[0].iconImage!)
-        
+
         dataDisplay.weatherDescription = ""
         for weather in weatherDataList.weather {
             dataDisplay.weatherDescription += weather.description
@@ -87,9 +90,3 @@ extension WeatherViewController {
         self.present(alert, animated: true, completion: nil)
     }
 }
-
-// TODO: faire un format different pour quand le chargement est en cours ou qu'il y a une erreur
-// TODO: mettre une bousolle qui tourne avec le vent
-// TODO: Charger l'affichage à l'ouverture de page
-// TODO: Changer les message d'alerte en francais
-// TODO: Mettre commentaires

@@ -21,24 +21,37 @@ class TranslateViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
-    
+
     override func viewWillAppear(_ animated: Bool) {
         // Listen for keyBoard events
         super.viewWillAppear(animated)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillChange(notification:)),
+                                               name: UIResponder.keyboardWillShowNotification,
+                                               object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillChange(notification:)),
+                                               name: UIResponder.keyboardWillHideNotification,
+                                               object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillChange(notification:)),
+                                               name: UIResponder.keyboardWillChangeFrameNotification,
+                                               object: nil)
     }
 
-    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self,
+                                                  name: UIResponder.keyboardWillShowNotification,
+                                                  object: nil)
+        NotificationCenter.default.removeObserver(self,
+                                                  name: UIResponder.keyboardWillHideNotification,
+                                                  object: nil)
+        NotificationCenter.default.removeObserver(self,
+                                                  name: UIResponder.keyboardWillChangeFrameNotification,
+                                                  object: nil)
+    }
+
     // MARK: - IBOULETS
 
     @IBOutlet weak var firstTextView: UITextView!
@@ -137,28 +150,29 @@ extension TranslateViewController: UITextViewDelegate {
         firstTextView.resignFirstResponder()
         secondTextView.resignFirstResponder()
     }
-    
+
     @objc func keyboardWillChange(notification: NSNotification) {
         if firstTextView.isFirstResponder {
             return
         }
-        guard let keyboardRect = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+        guard let keyboardRect =
+            (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
             return
         }
-        if notification.name == UIResponder.keyboardWillShowNotification || notification.name == UIResponder.keyboardWillChangeFrameNotification {
-            
+        if notification.name == UIResponder.keyboardWillShowNotification ||
+            notification.name == UIResponder.keyboardWillChangeFrameNotification {
+
             view.frame.origin.y = -keyboardRect.height
         } else {
             view.frame.origin.y = 0
         }
     }
 
-    
 }
 // MARK: - Alert
 extension TranslateViewController {
     func displayAlert(with message: String) {
-        let alert = UIAlertController(title: "Error!", message: message, preferredStyle: .alert)
+        let alert = UIAlertController(title: "Erreur!", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
@@ -175,8 +189,3 @@ extension TranslateViewController {
         self.present(alert, animated: true, completion: nil)
     }
 }
-// TODO: Mettre commentaires
-// TODO: refactor ??
-// TODO: Changer les message d'alerte en francais)
-// TODO: Voir si il faut mettre le text should return si on a mis la fonction textfielddidendediting ?? /// changer le comportement de la touche entrée
-// TODO: - voir poour faire comme une sorte de message instantanné

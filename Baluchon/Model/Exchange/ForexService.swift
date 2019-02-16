@@ -56,13 +56,13 @@ class ForexService {
     }
 
     private func createForexRequest(ratedCurrency: String, baseCurrency: String) -> URLRequest {
-        
+
         let query: [String: String] = [
             "access_key": ServicesKey.apiKeyForex,
             "symbols": ratedCurrency,
-            "base" : baseCurrency
+            "base": baseCurrency
         ]
-        
+
         let latestForexUrl = ForexService.baseLatestForexUrl.withQueries(query)!
         var request = URLRequest(url: latestForexUrl)
         request.httpMethod = "GET"
