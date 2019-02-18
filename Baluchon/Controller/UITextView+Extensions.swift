@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 extension UITextView {
+    // extension for adding a "done" button to the keyboard
 
     @IBInspectable var doneAccessory: Bool {
         get {

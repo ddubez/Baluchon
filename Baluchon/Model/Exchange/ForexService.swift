@@ -9,7 +9,9 @@
 import Foundation
 
 class ForexService {
+    // network request for retrieve conversion data in Forex Class
 
+    // MARK: - PROPERTIES
     private var session = URLSession(configuration: .default)
 
     init(session: URLSession) {
@@ -24,6 +26,7 @@ class ForexService {
 
     private var task: URLSessionDataTask?
 
+    // MARK: - FUNCTIONS
     func getForex(callBack: @escaping (Bool, Forex?, String) -> Void) {
         let request = createForexRequest(ratedCurrency: "USD", baseCurrency: "EUR")
 

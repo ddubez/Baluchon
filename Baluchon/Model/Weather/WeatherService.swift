@@ -9,11 +9,15 @@
 import Foundation
 
 class WeatherService {
+    // network request for retrieve weather data in WeatherData Class
 
-    private var session = URLSession(configuration: .default)
+    // MARK: - PROPERTIES
+    private var weatherSession = URLSession(configuration: .default)
+    private var imageSession = URLSession(configuration: .default)
 
-    init(session: URLSession) {
-        self.session = session
+    init(weatherSession: URLSession, imageSession: URLSession) {
+        self.weatherSession = weatherSession
+        self.imageSession = imageSession
     }
 
     static var shared = WeatherService()
@@ -27,6 +31,7 @@ class WeatherService {
 
     private var task: URLSessionDataTask?
 
+    // MARK: - FUNCTIONS
     func getWeather(firstCityId: String,
                     secondCityId: String,
                     callBack: @escaping (Bool, [WeatherData.List]?, String) -> Void) {
@@ -34,7 +39,7 @@ class WeatherService {
 
         task?.cancel()
 
-        task = session.dataTask(with: request) { (data, response, error) in
+        task = weatherSession.dataTask(with: request) { (data, response, error) in
             DispatchQueue.main.async {
                 guard let data = data, error == nil else {
                     callBack(false, nil, "error in data")
@@ -59,22 +64,24 @@ class WeatherService {
                     return
                 }
 
-                self.getIconImages(icon: weatherDataList[0].weather[0].icon) {(data) in
-                    guard let data = data else {
-                        callBack(false, nil, "Désolé, il n'y a pas d'image pour la ville 1")
-                        return
-                    }
-                    weatherDataList[0].weather[0].iconImage = data
+                let getIconImagesGroup = DispatchGroup()
 
-                    self.getIconImages(icon: weatherDataList[1].weather[0].icon) {(data) in
+                for index in 0...1 {
+                    getIconImagesGroup.enter()
+
+                    let service = WeatherService(weatherSession: self.weatherSession, imageSession: self.imageSession)
+                    service.getIconImages(icon: weatherDataList[index].weather[0].icon) {(data) in
                         guard let data = data else {
-                            callBack(false, nil, "Désolé, il n'y a pas d'image pour la ville 2")
+                            callBack(false, nil, "Désolé, il n'y a pas d'image pour la ville")
                             return
                         }
-                        weatherDataList[1].weather[0].iconImage = data
-
-                        callBack(true, weatherDataList, "")
+                        weatherDataList[index].weather[0].iconImage = data
+                        getIconImagesGroup.leave()
                     }
+                }
+
+                getIconImagesGroup.notify(queue: .main) {
+                    callBack(true, weatherDataList, "")
                 }
             }
         }
@@ -82,12 +89,12 @@ class WeatherService {
     }
 
     private func getIconImages(icon: String, completionHandler: @escaping ((Data?) -> Void)) {
- //       let session = URLSession(configuration: .default)
+
         var iconImagesUrl = WeatherService.IconImagesBaseUrl
         iconImagesUrl.appendPathComponent(icon + ".png")
 
         task?.cancel()
-        task = session.dataTask(with: iconImagesUrl) { (data, response, error) in
+        task = imageSession.dataTask(with: iconImagesUrl) { (data, response, error) in
             DispatchQueue.main.async {
                 guard let data = data, error == nil else {
                     completionHandler(nil)

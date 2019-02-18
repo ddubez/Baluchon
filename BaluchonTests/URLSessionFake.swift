@@ -9,6 +9,8 @@
 import Foundation
 
 class URLSessionFake: URLSession {
+    // Creation of fake URLSession for performing units tests
+
     var data: Data?
     var response: URLResponse?
     var error: Error?

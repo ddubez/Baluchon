@@ -152,6 +152,7 @@ extension TranslateViewController: UITextViewDelegate {
     }
 
     @objc func keyboardWillChange(notification: NSNotification) {
+        // move the view when adding text in secondTextView
         if firstTextView.isFirstResponder {
             return
         }

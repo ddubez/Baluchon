@@ -17,6 +17,7 @@ class WeatherViewController: UIViewController {
         refreshWeather()
     }
 
+    // MARK: - PROPERTIES
     let newYorkId = "5128581"
     let bordeauxId = "3031582"
 
@@ -24,7 +25,6 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var didTapRefreshButton: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var upWeatherDataDisplay: WeatherDataDisplay!
-
     @IBOutlet weak var downWeatherDataDisplay: WeatherDataDisplay!
 
     // MARK: - IBACTIONS

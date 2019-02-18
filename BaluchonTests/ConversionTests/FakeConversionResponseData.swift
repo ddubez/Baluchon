@@ -1,5 +1,5 @@
 //
-//  FakeResponseData.swift
+//  FakeConversionResponseData.swift
 //  BaluchonTests
 //
 //  Created by David Dubez on 27/01/2019.
@@ -8,18 +8,24 @@
 
 import Foundation
 
-class FakeResponseData {
+class FakeConversionResponseData {
 
     // MARK: - Data
     static var forexCorrectData: Data? {
-        let bundle = Bundle(for: FakeResponseData.self)
+        let bundle = Bundle(for: FakeConversionResponseData.self)
         let url = bundle.url(forResource: "Forex", withExtension: "json")!
         return try? Data(contentsOf: url)
     }
 
     static var forexCorrectDataWithNoSuccess: Data? {
-        let bundle = Bundle(for: FakeResponseData.self)
+        let bundle = Bundle(for: FakeConversionResponseData.self)
         let url = bundle.url(forResource: "WrongForex", withExtension: "json")!
+        return try? Data(contentsOf: url)
+    }
+
+    static var historicalForexCorrectData: Data? {
+        let bundle = Bundle(for: FakeConversionResponseData.self)
+        let url = bundle.url(forResource: "HistoricalForex", withExtension: "json")!
         return try? Data(contentsOf: url)
     }
 

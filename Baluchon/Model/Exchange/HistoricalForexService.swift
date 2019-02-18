@@ -8,14 +8,21 @@
 
 import Foundation
 class HistoricalForexService {
+    // network request for retrieve historical rates data in Forex Class
 
+    // MARK: - PROPERTIES
     private var session = URLSession(configuration: .default)
+
+    init(session: URLSession) {
+        self.session = session
+    }
 
     private static let baseUrlString = "http://data.fixer.io/api/"
     private static let baseHistoricalForexUrl = URL(string: baseUrlString)!
 
     private var task: URLSessionDataTask?
 
+    // MARK: - FUCNTIONS
     func getHistoricalRate(date: String, completionHandler: @escaping ((Forex?) -> Void)) {
         let request = createForexRequest(date: date, ratedCurrency: "USD", baseCurrency: "EUR")
 

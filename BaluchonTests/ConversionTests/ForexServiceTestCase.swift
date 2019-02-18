@@ -22,7 +22,7 @@ class ForexServiceTestCase: XCTestCase {
         let forexService = ForexService(
             session: URLSessionFake(data: nil,
                                     response: nil,
-                                    error: FakeResponseData.error))
+                                    error: FakeConversionResponseData.error))
 
         // When
         let expectation = XCTestExpectation(description: "Wait for queue change.")
@@ -38,8 +38,8 @@ class ForexServiceTestCase: XCTestCase {
     func testGetForexShouldPostFailedCallbackIfIncorrectResponse() {
         // Given
         let forexService = ForexService(
-            session: URLSessionFake(data: FakeResponseData.forexCorrectData,
-                                    response: FakeResponseData.responseKO,
+            session: URLSessionFake(data: FakeConversionResponseData.forexCorrectData,
+                                    response: FakeConversionResponseData.responseKO,
                                     error: nil))
 
         // When
@@ -57,8 +57,8 @@ class ForexServiceTestCase: XCTestCase {
     func testGetForexShouldPostFailedCallbackIfIncorrectData() {
         // Given
         let forexService = ForexService(
-            session: URLSessionFake(data: FakeResponseData.forexIncorrectData,
-                                    response: FakeResponseData.responseOK,
+            session: URLSessionFake(data: FakeConversionResponseData.forexIncorrectData,
+                                    response: FakeConversionResponseData.responseOK,
                                     error: nil))
 
         // When
@@ -76,8 +76,8 @@ class ForexServiceTestCase: XCTestCase {
     func testGetForexShouldPostFailedCallbackIfNoSuccesInForex() {
         // Given
         let forexService = ForexService(
-            session: URLSessionFake(data: FakeResponseData.forexCorrectDataWithNoSuccess,
-                                    response: FakeResponseData.responseOK,
+            session: URLSessionFake(data: FakeConversionResponseData.forexCorrectDataWithNoSuccess,
+                                    response: FakeConversionResponseData.responseOK,
                                     error: nil))
 
         // When
@@ -97,8 +97,8 @@ class ForexServiceTestCase: XCTestCase {
     func testGetForexShouldPostSuccessCallbackIfNoErrorAndCorrectData() {
         // Given
         let forexService = ForexService(
-            session: URLSessionFake(data: FakeResponseData.forexCorrectData,
-                                    response: FakeResponseData.responseOK,
+            session: URLSessionFake(data: FakeConversionResponseData.forexCorrectData,
+                                    response: FakeConversionResponseData.responseOK,
                                     error: nil))
 
         // When

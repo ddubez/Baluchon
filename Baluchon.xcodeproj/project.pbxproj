@@ -11,7 +11,7 @@
 		4F06B1B521FB744B00AFDBC5 /* ForexService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F06B1B421FB744B00AFDBC5 /* ForexService.swift */; };
 		4F06B1C621FDA65A00AFDBC5 /* ForexServiceTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F06B1C521FDA65A00AFDBC5 /* ForexServiceTestCase.swift */; };
 		4F06B1C821FDA72A00AFDBC5 /* Forex.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F06B1C721FDA72A00AFDBC5 /* Forex.json */; };
-		4F06B1CA21FDB2EB00AFDBC5 /* FakeResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F06B1C921FDB2EB00AFDBC5 /* FakeResponseData.swift */; };
+		4F06B1CA21FDB2EB00AFDBC5 /* FakeConversionResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F06B1C921FDB2EB00AFDBC5 /* FakeConversionResponseData.swift */; };
 		4F06B1CC21FE420500AFDBC5 /* URLSessionFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F06B1CB21FE420500AFDBC5 /* URLSessionFake.swift */; };
 		4F06B1CE2200634D00AFDBC5 /* WrongForex.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F06B1CD2200634D00AFDBC5 /* WrongForex.json */; };
 		4F115E4B220DB5C5005DA761 /* BasicBarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F115E4A220DB5C5005DA761 /* BasicBarChart.swift */; };
@@ -26,6 +26,7 @@
 		4FA0E0212216C4C300654C68 /* URLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA0E0202216C4C300654C68 /* URLExtension.swift */; };
 		4FA0E02322180C8900654C68 /* UITextView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA0E02222180C8900654C68 /* UITextView+Extensions.swift */; };
 		4FA0E02522181D7B00654C68 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 4FA0E02422181D7B00654C68 /* .gitignore */; };
+		4FA0E02722195B6F00654C68 /* WeatherDataEmpty.json in Resources */ = {isa = PBXBuildFile; fileRef = 4FA0E02622195B6F00654C68 /* WeatherDataEmpty.json */; };
 		4FA85E4B22038DF100B14140 /* Translation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA85E4A22038DF100B14140 /* Translation.swift */; };
 		4FA85E4D2204FA4F00B14140 /* TranslationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA85E4C2204FA4F00B14140 /* TranslationService.swift */; };
 		4FD311F021F52EAD00E6C36C /* ExchangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD311EF21F52EAD00E6C36C /* ExchangeViewController.swift */; };
@@ -64,7 +65,7 @@
 		4F06B1BF21FDA3F500AFDBC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F06B1C521FDA65A00AFDBC5 /* ForexServiceTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForexServiceTestCase.swift; sourceTree = "<group>"; };
 		4F06B1C721FDA72A00AFDBC5 /* Forex.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Forex.json; sourceTree = "<group>"; };
-		4F06B1C921FDB2EB00AFDBC5 /* FakeResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeResponseData.swift; sourceTree = "<group>"; };
+		4F06B1C921FDB2EB00AFDBC5 /* FakeConversionResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeConversionResponseData.swift; sourceTree = "<group>"; };
 		4F06B1CB21FE420500AFDBC5 /* URLSessionFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionFake.swift; sourceTree = "<group>"; };
 		4F06B1CD2200634D00AFDBC5 /* WrongForex.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WrongForex.json; sourceTree = "<group>"; };
 		4F115E4A220DB5C5005DA761 /* BasicBarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicBarChart.swift; sourceTree = "<group>"; };
@@ -81,6 +82,7 @@
 		4FA0E0202216C4C300654C68 /* URLExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLExtension.swift; sourceTree = "<group>"; };
 		4FA0E02222180C8900654C68 /* UITextView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Extensions.swift"; sourceTree = "<group>"; };
 		4FA0E02422181D7B00654C68 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		4FA0E02622195B6F00654C68 /* WeatherDataEmpty.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WeatherDataEmpty.json; sourceTree = "<group>"; };
 		4FA85E4A22038DF100B14140 /* Translation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translation.swift; sourceTree = "<group>"; };
 		4FA85E4C2204FA4F00B14140 /* TranslationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationService.swift; sourceTree = "<group>"; };
 		4FD311EF21F52EAD00E6C36C /* ExchangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeViewController.swift; sourceTree = "<group>"; };
@@ -183,7 +185,7 @@
 			children = (
 				4F06B1C521FDA65A00AFDBC5 /* ForexServiceTestCase.swift */,
 				4F95AFB52200F8B400AD5194 /* ConversionTestCase.swift */,
-				4F06B1C921FDB2EB00AFDBC5 /* FakeResponseData.swift */,
+				4F06B1C921FDB2EB00AFDBC5 /* FakeConversionResponseData.swift */,
 				4F06B1C721FDA72A00AFDBC5 /* Forex.json */,
 				4F06B1CD2200634D00AFDBC5 /* WrongForex.json */,
 				4FFBDCCC2212B7850075BEAE /* HistoricalForexServiceTestCase.swift */,
@@ -273,6 +275,7 @@
 				4FFBDCD62212BB920075BEAE /* FakeWeatherResponseData.swift */,
 				4FFBDCDA2212BD2A0075BEAE /* WrongWeatherData.json */,
 				4FFBDCD22212B8C70075BEAE /* WeatherData.json */,
+				4FA0E02622195B6F00654C68 /* WeatherDataEmpty.json */,
 			);
 			path = WeatherTests;
 			sourceTree = "<group>";
@@ -371,6 +374,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FFBDCD32212B8C70075BEAE /* WeatherData.json in Resources */,
+				4FA0E02722195B6F00654C68 /* WeatherDataEmpty.json in Resources */,
 				4FFBDCD92212BCF90075BEAE /* WrongTranslation.json in Resources */,
 				4FFBDCCF2212B8170075BEAE /* HistoricalForex.json in Resources */,
 				4FFBDCDB2212BD2A0075BEAE /* WrongWeatherData.json in Resources */,
@@ -426,7 +430,7 @@
 				4FFBDCCD2212B7850075BEAE /* HistoricalForexServiceTestCase.swift in Sources */,
 				4FFBDCC72212B6BB0075BEAE /* WeatherServiceTestCase.swift in Sources */,
 				4FFBDCCB2212B6FE0075BEAE /* TranslationServiceTestCase.swift in Sources */,
-				4F06B1CA21FDB2EB00AFDBC5 /* FakeResponseData.swift in Sources */,
+				4F06B1CA21FDB2EB00AFDBC5 /* FakeConversionResponseData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

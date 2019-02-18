@@ -9,6 +9,8 @@
 import Foundation
 
 class Conversion {
+    // Store amount and convert it according to the way
+
     // MARK: - PROPERTIES
     var amountConverted: Double = 0
 

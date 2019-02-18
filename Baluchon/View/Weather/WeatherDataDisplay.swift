@@ -9,6 +9,9 @@
 import UIKit
 
 class WeatherDataDisplay: UIStackView {
+    // subClass for manage the view for displaying weather data
+
+    // MARK: - IBOUTLETS
     @IBOutlet private var cityLabel: UILabel!
     @IBOutlet private var weatherIconImage: UIImageView!
     @IBOutlet private var weatherDescriptionLabel: UILabel!
@@ -21,6 +24,7 @@ class WeatherDataDisplay: UIStackView {
     @IBOutlet private var sysSunsetLabel: UILabel!
     @IBOutlet private var coordonnateLabel: UILabel!
 
+    // MARK: - PROPERTIES
     var cityName = "" {
         didSet {
             cityLabel.text = cityName
@@ -85,6 +89,7 @@ class WeatherDataDisplay: UIStackView {
         }
     }
 
+    // MARK: - FUNCTIONS
     private func setStyle(_ style: Style) {
         switch style {
         case .dataLoaded:

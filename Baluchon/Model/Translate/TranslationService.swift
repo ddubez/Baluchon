@@ -9,7 +9,9 @@
 import Foundation
 
 class TranslationService {
+    // network request for retrieve translation data in Translation Class
 
+    // MARK: - PROPERTIES
     private var session = URLSession(configuration: .default)
 
     init(session: URLSession) {
@@ -25,6 +27,7 @@ class TranslationService {
 
     private var task: URLSessionDataTask?
 
+    // MARK: - FUNCTIONS
     func getTranslation(textToTranslate: String,
                         source: String,
                         target: String,

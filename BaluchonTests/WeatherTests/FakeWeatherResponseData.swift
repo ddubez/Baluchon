@@ -23,6 +23,12 @@ class FakeWeatherResponseData {
         return try? Data(contentsOf: url)
     }
 
+    static var weatherCorrectDataWithEmptyList: Data? {
+        let bundle = Bundle(for: FakeWeatherResponseData.self)
+        let url = bundle.url(forResource: "WeatherDataEmpty", withExtension: "json")!
+        return try? Data(contentsOf: url)
+    }
+
     static let weatherIncorrectData = "erreur".data(using: .utf8)!
     static let imageData = "image".data(using: .utf8)!
 
